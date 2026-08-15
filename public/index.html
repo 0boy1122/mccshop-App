@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The MCC Shop — Home, Office & Construction Site Delivery | Accra</title>
+<meta name="description" content="Premium Deco building materials, paints, kitchen cabinets &amp; installation, sofas, beds, wardrobes, dining sets &amp; office furniture — delivered door-to-door across every neighbourhood in Accra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;width:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--t1);overflow-x:hidden;width:100%;-webkit-text-size-adjust:100%;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;max-width:100%;word-wrap:break-word;}
+
+:root{
+  --ink:#090909;
+  --ink2:#0f0f0f;
+  --ink3:#141414;
+  --sage:#c9963f;
+  --sage2:#b8832e;
+  --sage3:#9d6f25;
+  --sage4:#060606;
+  --mist:#1c1812;
+  --mist2:#2a2318;
+  --amber:#c9963f;
+  --amber2:#b8832e;
+  --amberl:#1a1610;
+  --cream:#090909;
+  --cream2:#121212;
+  --cream3:#1c1c1c;
+  --wa:#25D366;
+  --wa2:#1aa34a;
+  --white:#111111;
+  --t1:#f2ede6;
+  --t2:#cec8c0;
+  --t3:#7a7470;
+  --t4:#4a4642;
+  --border:rgba(201,150,63,.12);
+  --border2:rgba(201,150,63,.22);
+  --r:16px;
+  --r2:24px;
+  --r3:32px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.5);
+  --shadow-md:0 8px 32px rgba(0,0,0,.55);
+  --shadow-lg:0 24px 64px rgba(0,0,0,.65);
+  --shadow-xl:0 40px 100px rgba(0,0,0,.75);
+  --transition:all .4s cubic-bezier(.16,1,.3,1);
+  --gold:#c9963f;
+  --gold-glow:rgba(201,150,63,.15);
+}
+
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--t1);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+button{font-family:'DM Sans',sans-serif;}
+*,a,button{cursor:none!important;}
+
+/* ══ CURSOR ══ */
+#dot{position:fixed;z-index:9999;pointer-events:none;width:6px;height:6px;border-radius:50%;background:var(--gold);transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s,opacity .2s;opacity:0;}
+#ring{position:fixed;z-index:9998;pointer-events:none;width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,150,63,.4);transform:translate(-50%,-50%);transition:width .45s cubic-bezier(.16,1,.3,1),height .45s cubic-bezier(.16,1,.3,1),opacity .3s,border-color .3s;opacity:0;}
+body.cur #dot{opacity:1;}
+body.cur #ring{opacity:1;}
+body.hov #dot{width:10px;height:10px;background:var(--gold);}
+body.hov #ring{width:48px;height:48px;border-color:rgba(201,150,63,.3);}
+body.clicking #dot{width:5px;height:5px;}
+body.clicking #ring{width:26px;height:26px;}
+@media(hover:none){#dot,#ring{display:none;}*,a,button{cursor:auto!important;}}
+
+/* ══ LOADER ══ */
+#ldr{position:fixed;inset:0;z-index:9000;background:#040404;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;transition:opacity .8s ease,visibility .8s ease;}
+#ldr.out{opacity:0;visibility:hidden;}
+.ldr-words{overflow:hidden;margin-bottom:2px;}
+.ldr-word{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,8vw,100px);font-weight:700;color:var(--t1);letter-spacing:-.03em;line-height:1;display:block;transform:translateY(110%);animation:wordIn .7s cubic-bezier(.16,1,.3,1) forwards;}
+.ldr-word:nth-child(1){animation-delay:.1s;}
+.ldr-word:nth-child(2){animation-delay:.25s;color:var(--gold);font-style:italic;}
+.ldr-word:nth-child(3){animation-delay:.4s;font-size:clamp(12px,1.5vw,16px);font-weight:400;color:rgba(242,237,230,.3);letter-spacing:.3em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+@keyframes wordIn{to{transform:translateY(0);}}
+.ldr-line{width:0;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin-top:40px;animation:lw 1.2s .6s cubic-bezier(.4,0,.2,1) forwards;}
+@keyframes lw{to{width:200px;}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ══ ANNOUNCE ══ */
+.ann{background:#050505;padding:11px 0;overflow:hidden;position:relative;border-bottom:1px solid rgba(201,150,63,.06);}
+.ann::before,.ann::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
+.ann::before{left:0;background:linear-gradient(to right,#050505,transparent);}
+.ann::after{right:0;background:linear-gradient(to left,#050505,transparent);}
+.ann-inner{display:flex;gap:56px;animation:scroll 35s linear infinite;width:max-content;}
+.ann-item{display:flex;align-items:center;gap:10px;font-size:11px;color:rgba(242,237,230,.35);letter-spacing:.1em;white-space:nowrap;flex-shrink:0;text-transform:uppercase;}
+.ann-sep{font-size:8px;color:var(--gold);opacity:.6;}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══ IMPORT BANNER ══ */
+.import-banner{background:linear-gradient(90deg,#0e0a00 0%,#1a1200 40%,#0e0a00 100%);border-top:1px solid rgba(201,150,63,.25);border-bottom:1px solid rgba(201,150,63,.25);padding:10px 24px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center;}
+.import-banner-ic{font-size:18px;flex-shrink:0;}
+.import-banner-text{font-size:11.5px;color:var(--t2);letter-spacing:.06em;line-height:1.5;}
+.import-banner-text strong{color:var(--gold);font-weight:600;}
+.import-banner-cta{flex-shrink:0;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,150,63,.4);border-radius:20px;padding:5px 14px;white-space:nowrap;transition:var(--transition);}
+.import-banner-cta:hover{background:rgba(201,150,63,.12);border-color:var(--gold);}
+@media(max-width:600px){.import-banner{flex-wrap:wrap;gap:8px;padding:10px 16px;}.import-banner-text{font-size:10.5px;}}
+
+/* ══ NAV ══ */
+nav{position:sticky;top:0;z-index:500;height:72px;display:flex;align-items:center;padding:0 56px;gap:32px;transition:background .5s,border-color .5s,backdrop-filter .5s;}
+nav.scrolled{background:rgba(9,9,9,.88);backdrop-filter:blur(40px) saturate(1.4);border-bottom:1px solid rgba(201,150,63,.08);}
+.nl{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.nl-icon{width:44px;height:44px;background:#111;border-radius:12px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0;border:1px solid rgba(201,150,63,.15);}
+.nl-icon::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,150,63,.15) 0%,transparent 55%);}
+.nl-icon svg{width:22px;height:22px;fill:var(--gold);position:relative;z-index:1;}
+.nl-text{line-height:1.15;}
+.nl-logo-img{height:56px;width:auto;display:block;object-fit:contain;}
+.nl-pre{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--t4);}
+.nl-main{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--t1);letter-spacing:.02em;}
+.nav-mid{flex:1;display:flex;justify-content:center;}
+.nav-links{display:flex;align-items:center;gap:0;background:transparent;border:none;border-radius:0;padding:0;}
+.nav-link{padding:8px 22px;border-radius:0;font-size:12px;font-weight:400;color:var(--t3);border:none;background:none;transition:color .25s;letter-spacing:.08em;text-transform:uppercase;position:relative;}
+.nav-link::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:1px;background:var(--gold);transition:left .3s,right .3s;}
+.nav-link:hover{color:var(--t1);}
+.nav-link:hover::after{left:22px;right:22px;}
+.nav-link.on{color:var(--t1);}
+.nav-link.on::after{left:22px;right:22px;}
+.nav-r{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.srch{display:flex;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;overflow:hidden;width:220px;transition:width .3s,box-shadow .25s,border-color .25s,background .25s;}
+.srch:focus-within{width:260px;border-color:rgba(201,150,63,.35);box-shadow:0 0 0 3px rgba(201,150,63,.07);background:rgba(255,255,255,.06);}
+.srch-ic{padding:0 12px;display:flex;align-items:center;flex-shrink:0;}
+.srch-ic svg{width:13px;height:13px;stroke:var(--t4);fill:none;stroke-width:2;}
+.srch input{flex:1;border:none;outline:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--t1);padding:10px 0;min-width:0;}
+.srch input::placeholder{color:var(--t4);}
+.nwa{display:flex;align-items:center;gap:8px;background:var(--wa);color:white;border:none;border-radius:10px;padding:10px 18px;font-size:12px;font-weight:600;text-decoration:none;transition:all .25s;white-space:nowrap;letter-spacing:.04em;}
+.nwa:hover{background:var(--wa2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.25);}
+.nwa svg{width:14px;height:14px;fill:white;}
+.ncrt{position:relative;background:transparent;border:1px solid rgba(255,255,255,.08);border-radius:10px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;transition:all .25s;}
+.ncrt:hover{background:rgba(255,255,255,.06);border-color:rgba(201,150,63,.3);}
+.ncrt svg{width:17px;height:17px;stroke:var(--t2);fill:none;stroke-width:1.6;}
+.cbdg{position:absolute;top:-6px;right:-6px;background:var(--gold);color:#090909;font-size:9px;font-weight:700;min-width:18px;height:18px;border-radius:100px;display:none;align-items:center;justify-content:center;padding:0 4px;border:2px solid var(--cream);z-index:10;}
+
+/* ══ HERO BADGE ══ */
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,150,63,.08);border:1px solid rgba(201,150,63,.2);border-radius:100px;padding:7px 16px;margin-bottom:20px;font-size:10px;font-weight:500;color:rgba(201,150,63,.85);letter-spacing:.14em;text-transform:uppercase;}
+.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;box-shadow:0 0 0 3px rgba(201,150,63,.2);animation:pulse 2.5s infinite;}
+
+/* ══ HERO ══ */
+.hero{min-height:100vh;background:#050505;position:relative;display:flex;flex-direction:column;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(201,150,63,.04) 0%,transparent 70%);pointer-events:none;z-index:1;}
+#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.4;}
+.hero-content{flex:1;display:grid;grid-template-columns:1fr 1fr;position:relative;z-index:2;}
+.hero-l{padding:140px 72px 100px;display:flex;flex-direction:column;justify-content:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:40px;}
+.hero-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--wa);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,150,63,.35);}50%{box-shadow:0 0 0 7px rgba(201,150,63,0);}}
+.hero-tag-text{font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,237,230,.32);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:600;color:var(--t1);line-height:.93;letter-spacing:-.02em;margin-bottom:36px;}
+.hero h1 .line{display:block;overflow:hidden;}
+.hero h1 .line span{display:block;transform:translateY(110%);animation:lineUp .9s cubic-bezier(.16,1,.3,1) both;}
+.hero h1 .line:nth-child(1) span{animation-delay:.3s;}
+.hero h1 .line:nth-child(2) span{animation-delay:.45s;}
+.hero h1 .line:nth-child(3) span{animation-delay:.6s;}
+.hero h1 .green{color:rgba(242,237,230,.55);font-style:italic;font-weight:300;}
+.hero h1 .amber{color:var(--gold);font-style:italic;}
+@keyframes lineUp{to{transform:translateY(0);}}
+.hero-sub{font-size:17px;font-weight:300;color:rgba(242,237,230,.38);line-height:1.85;max-width:420px;margin-bottom:52px;opacity:0;animation:fadeIn .8s .9s ease both;letter-spacing:.01em;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeIn .8s 1.1s ease both;}
+.btn-solid{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#090909;border:none;border-radius:3px;padding:16px 36px;font-size:13px;font-weight:600;text-decoration:none;transition:var(--transition);letter-spacing:.08em;text-transform:uppercase;}
+.btn-solid:hover{background:#d4a34a;transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,150,63,.3);}
+.btn-solid svg{width:16px;height:16px;fill:#090909;transition:transform .25s;}
+.btn-solid:hover svg{transform:translateX(3px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(242,237,230,.6);border:1px solid rgba(242,237,230,.15);border-radius:3px;padding:16px 36px;font-size:13px;font-weight:400;text-decoration:none;transition:var(--transition);letter-spacing:.08em;text-transform:uppercase;}
+.btn-ghost:hover{color:var(--t1);border-color:rgba(242,237,230,.35);}
+.btn-ghost svg{width:16px;height:16px;fill:rgba(242,237,230,.5);}
+.hero-scroll{position:absolute;bottom:40px;left:64px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeIn .8s 1.4s ease both;}
+.hero-scroll-line{width:36px;height:1px;background:rgba(255,255,255,.12);position:relative;overflow:hidden;}
+.hero-scroll-line::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold);animation:scanLine 2.5s 2s ease-in-out infinite;}
+@keyframes scanLine{0%{left:-100%;}100%{left:100%;}}
+.hero-scroll-text{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.22);}
+.hero-r{display:flex;align-items:center;justify-content:center;padding:80px 48px;border-left:1px solid rgba(255,255,255,.04);opacity:0;animation:fadeIn .8s 1s ease both;}
+.feat-stack{width:100%;max-width:360px;display:flex;flex-direction:column;gap:10px;}
+.feat-hdr{font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:6px;}
+.fcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px;transition:all .35s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:16px;}
+.fcard:hover{background:rgba(201,150,63,.05);border-color:rgba(201,150,63,.2);transform:translateX(4px);}
+.fcard.top{background:linear-gradient(135deg,rgba(201,150,63,.08),rgba(201,150,63,.02));border-color:rgba(201,150,63,.18);flex-direction:column;align-items:flex-start;gap:10px;}
+.fcard-em{font-size:38px;line-height:1;}
+.fcard.top .fcard-em{font-size:48px;}
+.fcard-cat{font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:3px;}
+.fcard-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--t1);letter-spacing:-.01em;}
+.fcard.top .fcard-name{font-size:22px;}
+.fcard-price{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--t1);margin-top:8px;}
+.fcard-price sup{font-size:12px;font-weight:400;font-family:'DM Sans',sans-serif;color:rgba(242,237,230,.35);}
+.fcard-smalls{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fcard-sm{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:14px;}
+
+/* ══ STATS BAR ══ */
+.statsbar{background:#050505;border-top:1px solid rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.03);}
+.stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+.stat-item{padding:32px 40px;border-right:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:18px;transition:background .25s;}
+.stat-item:hover{background:rgba(201,150,63,.03);}
+.stat-item:last-child{border-right:none;}
+.stat-ic{width:44px;height:44px;border-radius:12px;background:rgba(201,150,63,.08);border:1px solid rgba(201,150,63,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.stat-ic svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.6;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--t1);line-height:1;letter-spacing:-.04em;}
+.stat-lbl{font-size:9px;color:rgba(242,237,230,.28);margin-top:5px;letter-spacing:.12em;text-transform:uppercase;}
+
+/* ══ PRODUCTS SECTION ══ */
+.products-section{padding:96px 0;max-width:1440px;margin:0 auto;padding-left:56px;padding-right:56px;}
+.sec-lead{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.05);}
+.sec-kicker{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;opacity:.8;}
+.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,48px);font-weight:600;color:var(--t1);letter-spacing:-.03em;line-height:.95;}
+.sec-h em{font-style:italic;color:rgba(242,237,230,.45);}
+.sec-desc{font-size:13px;color:var(--t3);margin-top:0;max-width:300px;line-height:1.7;text-align:right;letter-spacing:.02em;}
+
+/* ══ FILTER BAR ══ */
+.filter-bar{display:flex;align-items:center;gap:6px;margin-bottom:44px;overflow-x:auto;scrollbar-width:none;padding-bottom:0;}
+.filter-bar::-webkit-scrollbar{display:none;}
+.ftab{display:flex;align-items:center;gap:6px;padding:7px 18px;border-radius:2px;flex-shrink:0;font-size:11px;font-weight:500;color:var(--t3);background:transparent;border:1px solid rgba(255,255,255,.07);transition:all .25s;letter-spacing:.09em;text-transform:uppercase;}
+.ftab:hover{background:rgba(255,255,255,.04);color:var(--t1);border-color:rgba(255,255,255,.14);}
+.ftab.on{background:transparent;color:var(--gold);font-weight:600;border-color:var(--gold);}
+.ftab-ic{display:none;}
+.ftab-n{font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px;margin-left:2px;letter-spacing:.05em;}
+.ftab.on .ftab-n{background:rgba(201,150,63,.15);color:var(--gold);}
+.ftab:not(.on) .ftab-n{background:rgba(255,255,255,.05);color:var(--t4);}
+
+/* ══ PRODUCT GRID ══ */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.05);}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+
+/* Card base */
+.pcard{background:#101010;display:flex;flex-direction:column;transition:background .35s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1);animation:cardIn .6s ease both;position:relative;overflow:hidden;border-radius:0;}
+.pcard:nth-child(1){animation-delay:.05s}.pcard:nth-child(2){animation-delay:.1s}.pcard:nth-child(3){animation-delay:.15s}.pcard:nth-child(4){animation-delay:.2s}.pcard:nth-child(5){animation-delay:.25s}.pcard:nth-child(6){animation-delay:.3s}.pcard:nth-child(7){animation-delay:.35s}.pcard:nth-child(8){animation-delay:.4s}
+.pcard:hover{background:#151510;transform:none;box-shadow:inset 0 0 0 1px rgba(201,150,63,.3);}
+
+/* Image */
+.pcard-img{aspect-ratio:4/3;background:#0d0d0d;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.pcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.16,1,.3,1);}
+.pcard:hover .pcard-img img{transform:scale(1.04);}
+.pcard-img::after{content:'View';position:absolute;inset:0;background:rgba(5,5,5,.45);display:flex;align-items:center;justify-content:center;color:rgba(242,237,230,.85);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;opacity:0;transition:opacity .35s;backdrop-filter:blur(4px);}
+.pcard:hover .pcard-img::after{opacity:1;}
+
+/* Placeholder */
+.pcard-placeholder{width:100%;height:100%;background:linear-gradient(145deg,#111 0%,#0a0a0a 100%);display:flex;align-items:center;justify-content:center;position:relative;}
+.pcard-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(201,150,63,.04) 0%,transparent 60%);}
+.pcard-placeholder span{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:rgba(201,150,63,.15);line-height:1;text-transform:uppercase;position:relative;z-index:1;font-style:italic;}
+.pcard-em{display:none;}
+
+/* Badges */
+.pcard-badges{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;z-index:2;}
+.badge-vat{background:rgba(201,150,63,.12);color:var(--gold);font-size:8px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:2px;border:1px solid rgba(201,150,63,.2);}
+.badge-del{background:rgba(0,0,0,.7);color:rgba(242,237,230,.6);font-size:8px;padding:3px 8px;border-radius:2px;font-weight:400;letter-spacing:.06em;}
+
+/* Card body */
+.pcard-body{padding:20px 20px 12px;flex:1;display:flex;flex-direction:column;}
+.pcard-top{margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;}
+.pcard-cat{font-size:8px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.7;}
+.pcard-sku{display:none;}
+.pcard-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--t1);line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;}
+.pcard-unit{font-size:11px;color:var(--t4);margin-bottom:10px;display:flex;align-items:center;gap:4px;}
+.pcard-price-area{margin-top:auto;padding-top:4px;}
+.pcard-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--t1);line-height:1;letter-spacing:-.03em;}
+.pcard-price-unit{font-size:9px;color:var(--t4);margin-top:4px;letter-spacing:.06em;text-transform:uppercase;}
+.pcard-bulk{display:inline-flex;align-items:center;gap:5px;background:rgba(201,150,63,.08);color:var(--gold);font-size:9px;font-weight:500;border-radius:2px;padding:3px 8px;margin-top:10px;letter-spacing:.06em;border:1px solid rgba(201,150,63,.15);}
+
+/* Colour pills */
+.pcard-colours{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+.clr-pill{padding:4px 10px;border-radius:2px;font-size:10px;font-weight:400;border:1px solid rgba(255,255,255,.1);background:transparent;color:var(--t3);transition:all .2s;line-height:1.4;}
+.clr-pill.on{background:rgba(201,150,63,.12);border-color:var(--gold);color:var(--gold);}
+.clr-pill:hover:not(.on){background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.2);color:var(--t1);}
+
+/* Card footer */
+.pcard-foot{padding:14px 20px 18px;border-top:1px solid rgba(255,255,255,.05);display:flex;gap:8px;align-items:center;}
+.qty-ctrl{display:flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:3px;overflow:hidden;flex-shrink:0;}
+.qty-b{background:none;border:none;width:30px;height:36px;font-size:16px;color:var(--t2);display:flex;align-items:center;justify-content:center;transition:background .15s;font-weight:300;}
+.qty-b:hover{background:rgba(201,150,63,.1);}
+.qty-v{width:30px;text-align:center;font-size:13px;font-weight:600;color:var(--t1);border-left:1px solid rgba(255,255,255,.07);border-right:1px solid rgba(255,255,255,.07);line-height:36px;}
+.order-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(201,150,63,.1);color:var(--gold);border:1px solid rgba(201,150,63,.25);border-radius:2px;padding:10px 12px;font-size:11px;font-weight:500;text-decoration:none;transition:all .25s;letter-spacing:.07em;text-transform:uppercase;}
+.order-btn:hover{background:rgba(201,150,63,.18);border-color:rgba(201,150,63,.45);box-shadow:0 0 20px rgba(201,150,63,.08);}
+.order-btn svg{width:12px;height:12px;fill:var(--gold);flex-shrink:0;}
+.detail-btn{width:36px;height:36px;border-radius:2px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;flex-shrink:0;}
+.detail-btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);}
+.detail-btn svg{width:13px;height:13px;stroke:var(--t3);fill:none;stroke-width:2;}
+
+/* Empty state */
+.empty-msg{grid-column:1/-1;padding:96px 0;text-align:center;background:#0d0d0d;}
+.empty-msg .ei{font-size:48px;margin-bottom:20px;opacity:.3;}
+.empty-msg h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--t2);margin-bottom:8px;}
+.empty-msg p{font-size:14px;color:var(--t4);}
+
+/* ══ MARQUEE DIVIDER ══ */
+.mqdiv{background:#040404;padding:22px 0;overflow:hidden;margin:0;border-top:1px solid rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.03);}
+.mqd-track{display:flex;gap:0;animation:scrl2 30s linear infinite;width:max-content;}
+.mqd-item{display:flex;align-items:center;gap:0;font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,60px);font-weight:600;color:rgba(255,255,255,.04);letter-spacing:-.03em;white-space:nowrap;padding:0 40px;font-style:italic;}
+.mqd-item span{color:rgba(201,150,63,.08);}
+@keyframes scrl2{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══ EDITORIAL STRIP ══ */
+.editorial{background:#040404;padding:96px 48px;border-top:1px solid rgba(255,255,255,.03);}
+.ed-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.ed-text .sec-kicker{color:rgba(201,150,63,.7);}
+.ed-text .sec-h{color:var(--t1);}
+.ed-text .sec-h em{color:rgba(242,237,230,.38);font-style:italic;}
+.ed-text p{font-size:15px;color:rgba(242,237,230,.38);line-height:1.9;margin-top:20px;}
+.ed-text p+p{margin-top:14px;}
+.ed-cta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;}
+.btn-wa-big{display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:white;border:none;border-radius:2px;padding:14px 28px;font-size:13px;font-weight:500;text-decoration:none;transition:all .25s;letter-spacing:.06em;text-transform:uppercase;}
+.btn-wa-big:hover{background:var(--wa2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.25);}
+.btn-wa-big svg{width:18px;height:18px;fill:white;}
+.ed-feats{display:flex;flex-direction:column;gap:2px;}
+.ed-feat{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:0;padding:22px 24px;display:flex;align-items:center;gap:18px;transition:all .3s;}
+.ed-feat:hover{background:rgba(201,150,63,.04);border-color:rgba(201,150,63,.15);}
+.ed-feat-em{width:46px;height:46px;border-radius:0;background:rgba(201,150,63,.08);border:1px solid rgba(201,150,63,.12);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.ed-feat-t{font-size:14px;font-weight:500;color:var(--t1);}
+.ed-feat-d{font-size:12px;color:var(--t4);margin-top:4px;line-height:1.6;}
+
+/* ══ MODAL ══ */
+.ovl{position:fixed;inset:0;z-index:700;background:rgba(4,4,4,.88);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+.ovl.open{opacity:1;visibility:visible;}
+.mdl{background:#0e0e0e;border:1px solid rgba(255,255,255,.06);border-radius:2px;width:100%;max-width:600px;max-height:92vh;overflow-y:auto;transform:scale(.95) translateY(24px);transition:transform .5s cubic-bezier(.16,1,.3,1);position:relative;}
+@media(max-width:480px){
+  .mdl{max-height:100%;height:100%;border-radius:0;max-width:none;}
+  .ovl{padding:0;}
+}
+.ovl.open .mdl{transform:none;}
+.mdl-top{background:linear-gradient(135deg,#131310 0%,#0d0d0a 100%);height:240px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid rgba(255,255,255,.05);}
+@media(max-width:480px){
+  .mdl-top{height:180px;border-radius:0;}
+  .mdl-body{padding-bottom:120px;}
+}
+.mdl-em{font-size:96px;line-height:1;opacity:.6;}
+.mdl-x{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:2px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--t3);transition:all .2s;}
+.mdl-x:hover{background:rgba(255,255,255,.1);color:var(--t1);}
+.mdl-body{padding:32px;}
+.mdl-cr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.mdl-cat{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+.mdl-sku{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:10px;color:var(--t4);padding:3px 10px;border-radius:2px;}
+.mdl-name{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--t1);letter-spacing:-.03em;margin-bottom:28px;line-height:.95;}
+.mdl-specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:28px;}
+.mdl-spec{background:rgba(255,255,255,.03);border-radius:2px;padding:14px 16px;border:1px solid rgba(255,255,255,.06);}
+.mdl-spec-l{font-size:9px;color:var(--t4);text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px;}
+.mdl-spec-v{font-size:15px;font-weight:500;color:var(--t1);}
+.mdl-pzone{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:24px;}
+.mdl-price{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:600;color:var(--t1);letter-spacing:-.04em;line-height:1;}
+.mdl-pvat{font-size:12px;color:var(--t4);margin-top:6px;}
+.mdl-blkbdg{background:rgba(201,150,63,.07);border:1px solid rgba(201,150,63,.15);border-radius:2px;padding:12px 18px;text-align:center;}
+.mdl-blk-t{font-size:12px;font-weight:500;color:var(--gold);}
+.mdl-blk-d{font-size:11px;color:rgba(201,150,63,.55);margin-top:3px;}
+.mdl-qrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;}
+.mdl-qlbl{font-size:13px;font-weight:400;color:var(--t3);}
+.mdl-qctrl{display:flex;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.mq-btn{background:none;border:none;width:44px;height:44px;font-size:20px;font-weight:300;color:var(--t3);display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.mq-btn:hover{background:rgba(201,150,63,.08);color:var(--gold);}
+.mq-n{width:52px;text-align:center;font-size:18px;font-weight:600;color:var(--t1);line-height:44px;border-left:1px solid rgba(255,255,255,.07);border-right:1px solid rgba(255,255,255,.07);}
+.mdl-tot{margin-left:auto;text-align:right;}
+.mdl-tot-l{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--t4);}
+.mdl-tot-v{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--t1);letter-spacing:-.02em;}
+.mdl-wa{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--wa);color:white;border:none;border-radius:2px;padding:18px;font-size:15px;font-weight:600;width:100%;text-decoration:none;transition:var(--transition);letter-spacing:.04em;}
+.mdl-wa:hover{background:var(--wa2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,.25);}
+.mdl-wa svg{width:20px;height:20px;fill:white;}
+.mdl-note{text-align:center;font-size:11px;color:var(--t4);margin-top:12px;line-height:1.7;}
+
+/* ══ CART DRAWER ══ */
+.cscrim{position:fixed;inset:0;z-index:600;background:rgba(4,4,4,.72);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+.cscrim.open{opacity:1;visibility:visible;}
+.cdwr{position:fixed;top:0;right:0;bottom:0;z-index:610;width:420px;background:#0c0c0c;border-left:1px solid rgba(255,255,255,.06);box-shadow:-24px 0 80px rgba(0,0,0,.6);transform:translateX(110%);transition:transform .5s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;}
+.cdwr.open{transform:none;}
+.cdwr-head{padding:28px 28px 22px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;}
+.cdwr-head h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;letter-spacing:-.02em;color:var(--t1);}
+.cdwr-x{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:2px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--t3);transition:all .2s;}
+.cdwr-x:hover{background:rgba(255,255,255,.1);color:var(--t1);}
+.cdwr-body{flex:1;overflow-y:auto;padding:22px 28px;}
+.cart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;gap:14px;padding:48px 0;}
+.cart-empty-i{font-size:48px;opacity:.2;}
+.cart-empty-t{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--t2);}
+.cart-empty-d{font-size:13px;color:var(--t4);line-height:1.7;}
+.citem{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.citem-ic{width:58px;height:58px;border-radius:2px;background:#151515;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.citem-ic img{width:100%;height:100%;object-fit:cover;display:block;}
+.citem-info{flex:1;min-width:0;}
+.citem-n{font-size:14px;font-weight:400;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.citem-d{font-size:11px;color:var(--t4);margin-top:3px;}
+.citem-p{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--t1);white-space:nowrap;}
+.citem-rm{background:none;border:none;color:var(--t4);font-size:20px;transition:color .15s;padding:4px;flex-shrink:0;}
+.citem-rm:hover{color:rgba(255,100,100,.7);}
+.cdwr-foot{padding:22px 28px;border-top:1px solid rgba(255,255,255,.06);}
+.ctot-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+.ctot-l{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--t4);}
+.ctot-v{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--t1);letter-spacing:-.03em;}
+.csend{display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(201,150,63,.12);color:var(--gold);border:1px solid rgba(201,150,63,.3);border-radius:2px;padding:16px;font-size:14px;font-weight:500;width:100%;text-decoration:none;transition:var(--transition);letter-spacing:.06em;text-transform:uppercase;}
+.csend:hover{background:rgba(201,150,63,.2);border-color:rgba(201,150,63,.5);box-shadow:0 0 30px rgba(201,150,63,.08);}
+.csend svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;}
+.ccontinue{margin-bottom:10px;background:transparent;color:var(--t2);border:1px solid rgba(255,255,255,.12);cursor:pointer;}
+.ccontinue:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);box-shadow:none;color:var(--t1);}
+.cdwr-note{font-size:10px;color:var(--t4);text-align:center;margin-top:10px;line-height:1.7;}
+
+/* ══ FOOTER ══ */
+footer{background:#040404;padding:80px 56px 0;border-top:1px solid rgba(255,255,255,.04);}
+.foot-inner{max-width:1280px;margin:0 auto;}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,.04);}
+.fbrand-name{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--t1);letter-spacing:-.03em;margin-bottom:14px;line-height:.95;}
+.fbrand-desc{font-size:13px;color:rgba(242,237,230,.28);line-height:1.9;max-width:260px;margin-bottom:32px;}
+.fwa-btn{display:inline-flex;align-items:center;gap:9px;background:var(--wa);color:white;border:none;border-radius:2px;padding:12px 22px;font-size:12px;font-weight:500;text-decoration:none;transition:all .25s;letter-spacing:.05em;text-transform:uppercase;}
+.fwa-btn:hover{background:var(--wa2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.2);}
+.fwa-btn svg{width:15px;height:15px;fill:white;}
+.fcol-t{font-size:8px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:22px;}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.fcol ul li a{font-size:13px;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:8px;}
+.fcol ul li a:hover{color:rgba(255,255,255,.75);}
+.fcol ul li a::before{content:'';display:block;width:8px;height:1px;background:currentColor;opacity:.3;flex-shrink:0;transition:width .25s,opacity .25s;}
+.fcol ul li a:hover::before{width:14px;opacity:.7;}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding:22px 0;max-width:1280px;margin:0 auto;border-top:1px solid rgba(255,255,255,.04);}
+.foot-bottom p{font-size:10px;color:rgba(255,255,255,.16);letter-spacing:.06em;}
+.foot-wa-num a{color:rgba(255,255,255,.22);text-decoration:none;font-size:10px;letter-spacing:.04em;}
+.foot-wa-num a:hover{color:rgba(255,255,255,.55);}
+
+/* ══ REVEAL ══ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease;}
+.rv.in{opacity:1;transform:none;}
+
+/* ══ BOTTOM NAV ══ */
+.bnav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(12,12,12,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);height:64px;border-top:1px solid rgba(255,255,255,.06);z-index:450;align-items:center;justify-content:space-around;padding:0 4px;}
+.bnav-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:8px;font-weight:500;color:var(--t4);text-decoration:none;position:relative;padding:8px 14px;border-radius:0;letter-spacing:.06em;text-transform:uppercase;transition:color .15s;min-width:56px;}
+.bnav-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.6;}
+.bnav-btn.on{color:var(--gold);}
+.bnav-btn.on svg{stroke:var(--gold);}
+.bnav-bdg{position:absolute;top:4px;right:8px;background:var(--gold);color:#090909;font-size:8px;height:15px;min-width:15px;border-radius:100px;display:flex;align-items:center;justify-content:center;padding:0 3px;font-weight:700;}
+
+/* ══ MOBILE SEARCH OVERLAY ══ */
+.srch-overlay{display:none;position:fixed;inset:0;z-index:600;background:rgba(4,4,4,.88);backdrop-filter:blur(12px);padding:20px 16px;}
+.srch-overlay.open{display:flex;flex-direction:column;gap:12px;}
+.srch-overlay-bar{display:flex;align-items:center;background:#151515;border:1px solid rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.srch-overlay-bar svg{width:17px;height:17px;stroke:var(--t4);fill:none;stroke-width:2;flex-shrink:0;margin-left:16px;}
+.srch-overlay-bar input{flex:1;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:17px;color:var(--t1);padding:16px 12px;background:transparent;}
+.srch-overlay-close{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:2px;color:var(--t2);font-size:12px;font-weight:500;padding:12px 24px;align-self:flex-start;min-height:44px;letter-spacing:.06em;text-transform:uppercase;}
+
+/* ══ RESPONSIVE BREAKPOINTS ══ */
+@media(max-width:1200px){
+  .pgrid{grid-template-columns:repeat(3,1fr);}
+}
+
+@media(max-width:960px){
+  nav{padding:0 16px;gap:8px;}
+  .nav-mid{display:none;}
+  .srch{width:160px;}
+  .nwa{display:none;}
+  .hero-content{grid-template-columns:1fr;}
+  .hero-l{padding:80px 24px 40px;}
+  .hero-r{display:none;}
+  .hero-scroll{left:24px;}
+  .statsbar .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .stat-item{border-bottom:1px solid rgba(255,255,255,.04);}
+  .products-section{padding:48px 20px;}
+  .pgrid{grid-template-columns:repeat(2,1fr);}
+  input,textarea,select{font-size:16px!important;}
+  .ed-inner{grid-template-columns:1fr;}
+  .editorial{padding:60px 20px;}
+  .foot-top{grid-template-columns:1fr 1fr;gap:32px;}
+  footer{padding:48px 20px 0;}
+  .foot-bottom{flex-direction:column;gap:8px;text-align:center;padding:20px 0;}
+  .cdwr{width:100%;}
+  .cdwr-body{padding:16px 20px;}
+  .cdwr-head{padding:20px 20px 16px;}
+  .cdwr-foot{padding:16px 20px;}
+  #dot,#ring{display:none;}
+  .pcard:hover{transform:none;}
+}
+
+@media(max-width:640px){
+  .pgrid{grid-template-columns:repeat(2,1fr);}
+  .pcard-img{aspect-ratio:4/3;}
+  .qty-ctrl{display:none;}
+  .add-to-cart-btn{display:flex;}
+  .order-btn{flex:1 1 calc(50% - 4px);min-width:0;font-size:11px;padding:11px 8px;border-radius:2px;letter-spacing:.04em;}
+  .detail-btn{display:none;}
+  .pcard-foot{padding:10px 12px 12px;gap:8px;flex-wrap:wrap;}
+  .pcard-bulk{font-size:9px;padding:2px 7px;}
+}
+
+@media(max-width:480px){
+  nav{padding:0 12px;gap:6px;height:58px;}
+  .nl-logo-img{height:40px;}
+  .nl-main,.nl-pre,.nwa{display:none!important;}
+  .nav-r{gap:6px;}
+  .srch{width:38px;height:38px;border-radius:2px;justify-content:center;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);}
+  .srch input{display:none;}
+  .srch-ic{padding:0;width:100%;justify-content:center;}
+  .ncrt{width:38px;height:38px;border-radius:2px;}
+  .ncrt svg{width:15px;height:15px;}
+  .bnav{display:flex;}
+  body{padding-bottom:72px;}
+  .hero{min-height:auto;}
+  .hero-l{padding:72px 20px 32px;}
+  .hero h1{font-size:clamp(38px,10vw,56px);letter-spacing:-.025em;}
+  .hero-sub{font-size:14px;margin-bottom:28px;}
+  .hero-actions{gap:10px;}
+  .btn-solid,.btn-ghost{padding:13px 24px;font-size:12px;border-radius:2px;}
+  .hero-scroll{display:none;}
+  .statsbar .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .stat-item{padding:18px 20px;}
+  .stat-num{font-size:30px;}
+  .stat-ic{width:40px;height:40px;}
+  .products-section{padding:32px 14px 48px;}
+  .sec-lead{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:20px;padding-bottom:16px;}
+  .sec-h{font-size:28px;}
+  .filter-bar{gap:5px;margin-bottom:24px;padding-bottom:12px;}
+  .ftab{padding:7px 12px;font-size:10px;}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:1px;padding:0;}
+  .pcard-img{aspect-ratio:4/3;}
+  .pcard-body{padding:10px 12px 6px;}
+  .pcard-name{font-size:15px;margin-bottom:6px;}
+  .pcard-cat{font-size:8px;}
+  .pcard-price{font-size:20px;}
+  .pcard-price-unit{font-size:9px;}
+  .pcard-placeholder span{font-size:44px;}
+  .clr-pill{font-size:9px;padding:2px 7px;}
+  .pcard-foot{padding:8px 10px 10px;}
+  .order-btn{font-size:10px;padding:10px 6px;border-radius:2px;gap:3px;}
+  .order-btn svg{width:10px;height:10px;}
+  .badge-vat{font-size:7px;padding:3px 6px;}
+  .badge-del{font-size:7px;padding:3px 6px;}
+  .mdl-body{padding:20px;}
+  .mdl-name{font-size:26px;}
+  .mdl-price{font-size:36px;}
+  .mdl-specs{grid-template-columns:1fr 1fr;}
+  .citem-ic{width:44px;height:44px;border-radius:2px;}
+  .citem-n{font-size:13px;}
+  .ctot-v{font-size:26px;}
+  .editorial{padding:48px 16px;}
+  .fbrand-name{font-size:26px;}
+  .foot-top{grid-template-columns:1fr;gap:28px;}
+  footer{padding:40px 16px 0;}
+  #chkOvl{padding:0;align-items:flex-end;}
+  #chkOvl .mdl{border-radius:0;max-height:92vh;max-width:100%;overflow-y:auto;}
+  .ann{padding:8px 0;}
+  .ann-item{font-size:10px;}
+}
+
+/* ══ TOAST ══ */
+@media(max-width:380px){
+  .pgrid{grid-template-columns:1fr;}
+  .pcard-img{aspect-ratio:16/11;}
+  .pcard-name{font-size:16px;}
+  .pcard-price{font-size:22px;}
+  .order-btn{min-height:44px;font-size:11px;}
+  .filter-bar{margin-left:-14px;margin-right:-14px;padding-left:14px;padding-right:14px;}
+}
+
+.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%) translateY(16px);background:#151515;color:var(--t1);padding:12px 24px;border-radius:2px;font-size:13px;font-weight:400;z-index:9000;opacity:0;transition:all .3s;pointer-events:none;border:1px solid rgba(255,255,255,.08);white-space:nowrap;max-width:90vw;text-align:center;letter-spacing:.04em;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.toast.success{border-color:rgba(201,150,63,.25);color:var(--gold);}
+.toast.error{border-color:rgba(255,80,80,.2);color:rgba(255,150,150,.8);}
+
+/* ══ FLOATING WHATSAPP (MOBILE) ══ */
+.wa-fab{display:none;position:fixed;bottom:76px;right:16px;z-index:440;width:52px;height:52px;border-radius:50%;background:var(--wa);color:white;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);border:none;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.wa-fab svg{width:26px;height:26px;fill:white;}
+.wa-fab:active{transform:scale(.92);}
+@media(max-width:480px){.wa-fab{display:flex;}}
+
+/* ══ SKELETON ══ */
+.skeleton{background:linear-gradient(90deg,#131313 25%,#1a1a1a 50%,#131313 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:0;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.skel-card{background:#0f0f0f;border:1px solid rgba(255,255,255,.04);border-radius:0;overflow:hidden;}
+.skel-img{aspect-ratio:1;width:100%;}
+.skel-body{padding:20px;display:flex;flex-direction:column;gap:12px;}
+.skel-line{height:12px;border-radius:0;}
+.skel-line.wide{width:75%;}
+.skel-line.narrow{width:40%;}
+.skel-line.price{height:18px;width:50%;}
+</style>
+</head>
+<body>
+
+<div id="dot"></div>
+<div id="ring"></div>
+
+<!-- LOADER -->
+<div id="ldr">
+  <div class="ldr-words">
+    <span class="ldr-word">MCC</span>
+    <span class="ldr-word">SHOP</span>
+    <span class="ldr-word">Accra's Material Hub</span>
+  </div>
+  <div class="ldr-line"></div>
+</div>
+
+<!-- FLOATING WHATSAPP (mobile) -->
+<a href="https://wa.me/233509919161?text=Hi%2C%20I%27d%20like%20to%20order%20from%20The%20MCC%20Shop" target="_blank" class="wa-fab" aria-label="WhatsApp us">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.532 5.858L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.67-.523-5.184-1.435l-.372-.22-3.762.981.999-3.654-.242-.378A9.954 9.954 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<!-- BOTTOM NAV -->
+<div class="bnav">
+  <a href="#" class="bnav-btn on" onclick="scrollTo('products')"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+  <a href="#products" class="bnav-btn"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Catalog</a>
+  <a href="javascript:openCart()" class="bnav-btn">
+    <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.97 1.61h9.72a2 2 0 001.97-1.61L23 6H6"/></svg>
+    Cart<div id="bnav-bdg" class="bnav-bdg" style="display:none">0</div>
+  </a>
+  <a href="mcc-company-profile.pdf" target="_blank" class="bnav-btn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>About</a>
+</div>
+
+<!-- MOBILE SEARCH OVERLAY -->
+<div id="srchOverlay" class="srch-overlay" onclick="if(event.target===this)closeMobileSearch()">
+  <div class="srch-overlay-bar">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input id="si-mobile" type="text" placeholder="Search products..." oninput="doMobileSearch()" autofocus>
+  </div>
+  <button class="srch-overlay-close" onclick="closeMobileSearch()">Close</button>
+</div>
+
+<!-- ANNOUNCE -->
+<div class="ann">
+  <div class="ann-inner">
+    <span class="ann-item">Delivering across all of Accra</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Bike · Van · Pickup delivery</span><span class="ann-sep">✦</span>
+    <span class="ann-item">All prices VAT inclusive</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Bulk order discounts</span><span class="ann-sep">✦</span>
+    <span class="ann-item">WhatsApp quotes and ordering</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Construction site delivery</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Home &amp; office delivery</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Delivering across all of Accra</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Bike · Van · Pickup delivery</span><span class="ann-sep">✦</span>
+    <span class="ann-item">All prices VAT inclusive</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Bulk order discounts</span><span class="ann-sep">✦</span>
+    <span class="ann-item">WhatsApp quotes and ordering</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Construction site delivery</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Home &amp; office delivery</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Kitchen cabinets &amp; installation</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Office furniture by GECHi</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Doors &amp; glazing windows</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Flooring &amp; wall cladding</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Wardrobes &amp; storage solutions</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Home &amp; office delivery</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Kitchen cabinets &amp; installation</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Office furniture by GECHi</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Doors &amp; glazing windows</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Flooring &amp; wall cladding</span><span class="ann-sep">✦</span>
+    <span class="ann-item">Wardrobes &amp; storage solutions</span><span class="ann-sep">✦</span>
+  </div>
+</div>
+
+<div class="import-banner">
+  <span class="import-banner-ic">🚢</span>
+  <span class="import-banner-text"><strong>GECHI Luxury Furniture</strong> &nbsp;🇨🇳 China &nbsp;→&nbsp; Ghana 🇬🇭&nbsp; · &nbsp;Shipped direct to your doorstep &nbsp;·&nbsp; 20–30 days delivery &nbsp;·&nbsp; Prices in GHS, payment on order</span>
+  <a href="https://wa.me/233509919161?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20GECHI%20luxury%20furniture%20imports" target="_blank" class="import-banner-cta">Enquire</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nl">
+    <img src="mcc_logo.png" alt="The MCC Shop" class="nl-logo-img">
+  </a>
+  <div class="nav-mid">
+    <div class="nav-links">
+      <div class="nav-loc" style="display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:100px; border:1px solid rgba(255,255,255,0.1); margin-right:10px;">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="#2E8B65"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <select id="locSel" style="background:none; border:none; color:white; font-size:12px; font-weight:600; outline:none; cursor:pointer; padding:0;">
+          <option value="Accra Central" style="color:black">Accra Central</option>
+          <option value="East Legon" style="color:black">East Legon</option>
+          <option value="Spintex" style="color:black">Spintex</option>
+          <option value="Tema" style="color:black">Tema</option>
+          <option value="Dansoman" style="color:black">Dansoman</option>
+          <option value="Kasoa" style="color:black">Kasoa</option>
+          <option value="Cantonments" style="color:black">Cantonments</option>
+        </select>
+      </div>
+      <button class="nav-link on" onclick="scrollTo('products')">Shop</button>
+      <a href="mcc-company-profile.pdf" target="_blank" class="nav-link">About</a>
+      <a href="https://wa.me/233509919161?text=Hi%2C%20I%20have%20a%20question%20about%20The%20MCC%20Shop" target="_blank" class="nav-link">Contact</a>
+    </div>
+  </div>
+  <div class="nav-r">
+    <div class="srch" onclick="if(window.innerWidth<=480)openMobileSearch()">
+      <div class="srch-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+      <input id="si" type="text" placeholder="Search products…" oninput="doSearch()">
+    </div>
+    <a href="https://wa.me/233509919161?text=Hi%2C%20I%20need%20help%20with%20an%20order%20from%20The%20MCC%20Shop" target="_blank" class="nwa">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z M12.05 2C5.495 2 .16 7.335.157 13.892c0 2.096.547 4.142 1.588 5.945L.057 26l6.305-1.654A11.882 11.882 0 0012.05 22c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 2z"/></svg>
+      Chat with us
+    </a>
+    <button class="ncrt" onclick="openCart()">
+      <svg viewBox="0 0 24 24" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.97 1.61h9.72a2 2 0 001.97-1.61L23 6H6"/></svg>
+      <span class="cbdg" id="cbdg">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-l">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        DELIVERING ACROSS ACCRA NOW
+      </div>
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        <span class="hero-tag-text">Accra's trusted construction supplier</span>
+      </div>
+      <h1>
+        <div class="line"><span>Build.</span></div>
+        <div class="line"><span class="green">Furnish.</span></div>
+        <div class="line"><span class="amber">Deliver.</span></div>
+      </h1>
+      <p class="hero-sub">Premium Deco building materials, paints, kitchen cabinets & installation, sofas, beds, wardrobes, dining sets & office furniture — delivered door-to-door across every neighbourhood in Accra.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-solid" onclick="scrollTo('products')">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Shop for Delivery
+        </a>
+        <a href="https://wa.me/233509919161?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20bulk%20order%20for%20my%20site" target="_blank" class="btn-ghost">
+          <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967z M12.05 2C5.495 2 .16 7.335.157 13.892c0 2.096.547 4.142 1.588 5.945L.057 26l6.305-1.654A11.882 11.882 0 0012.05 22c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 2z"/></svg>
+          Site Enquiries
+        </a>
+      </div>
+      <div class="hero-scroll">
+        <div class="hero-scroll-line"></div>
+        <span class="hero-scroll-text">Scroll to explore</span>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="feat-stack">
+        <div class="feat-hdr">Featured this week</div>
+        <div id="heroFeat"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="statsbar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div><div class="stat-num">Accra</div><div class="stat-lbl">Full city coverage</div></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-ic"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div><div class="stat-num">3</div><div class="stat-lbl">Delivery modes</div></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-ic"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+      <div><div class="stat-num">VAT ✓</div><div class="stat-lbl">All prices inclusive</div></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-ic"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967z M12.05 2C5.495 2 .16 7.335.157 13.892c0 2.096.547 4.142 1.588 5.945L.057 26l6.305-1.654A11.882 11.882 0 0012.05 22c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 2z"/></svg></div>
+      <div><div class="stat-num">WhatsApp</div><div class="stat-lbl">Instant ordering</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE DIVIDER -->
+<div class="mqdiv">
+  <div class="mqd-track">
+    <div class="mqd-item">BUILD<span>✦</span></div><div class="mqd-item">DELIVER<span>✦</span></div><div class="mqd-item">FURNISH<span>✦</span></div><div class="mqd-item">ACCRA<span>✦</span></div><div class="mqd-item">CONSTRUCT<span>✦</span></div><div class="mqd-item">INSTALL<span>✦</span></div><div class="mqd-item">RENOVATE<span>✦</span></div>
+    <div class="mqd-item">BUILD<span>✦</span></div><div class="mqd-item">DELIVER<span>✦</span></div><div class="mqd-item">FURNISH<span>✦</span></div><div class="mqd-item">ACCRA<span>✦</span></div><div class="mqd-item">CONSTRUCT<span>✦</span></div><div class="mqd-item">INSTALL<span>✦</span></div><div class="mqd-item">RENOVATE<span>✦</span></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="sec-lead rv">
+    <div class="sec-lead-l">
+      <div class="sec-kicker">Our Catalogue</div>
+      <h2 class="sec-h">Shop by <em>Category</em></h2>
+      <p class="sec-desc">Everything for your build — from paints and plumbing to power tools, electricals and office furniture.</p>
+    </div>
+  </div>
+  <div class="filter-bar rv" id="ftabs"></div>
+  <div class="pgrid" id="pgrid"></div>
+</section>
+
+<!-- EDITORIAL / ABOUT -->
+<div class="editorial" id="editorial">
+  <div class="ed-inner">
+    <div class="ed-text rv">
+      <div class="sec-kicker">Why MCC Shop</div>
+      <h2 class="sec-h">Ghana's most trusted <em>construction delivery</em> partner</h2>
+      <p>The MCC Shop was built to solve a single problem — getting the right materials to the right place in Accra, fast. Whether you're a homeowner, contractor, or office manager, we deliver everything from a single LED bulb to a full office fit-out.</p>
+      <p>Browse our catalogue, pick your products, set your quantity, and order directly on WhatsApp. Our team confirms availability, discusses delivery and handles the rest.</p>
+      <div class="ed-cta">
+        <a href="https://wa.me/233509919161?text=Hi%2C%20I%27d%20like%20to%20order%20from%20The%20MCC%20Shop" target="_blank" class="btn-wa-big">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059z M12.05 2C5.495 2 .16 7.335.157 13.892c0 2.096.547 4.142 1.588 5.945L.057 26l6.305-1.654A11.882 11.882 0 0012.05 22c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 2z"/></svg>
+          Order on WhatsApp · +233 50 991 9161
+        </a>
+      </div>
+    </div>
+    <div class="ed-feats rv">
+      <div class="ed-feat"><div class="ed-feat-em">🏗️</div><div><div class="ed-feat-t">Home, Office & Site Delivery</div><div class="ed-feat-d">Bike for small parcels, Van for mid-size orders, Pickup truck for bulk construction materials</div></div></div>
+      <div class="ed-feat"><div class="ed-feat-em">📦</div><div><div class="ed-feat-t">Bulk Order Pricing</div><div class="ed-feat-d">Order above the threshold for each category and unlock negotiated pricing</div></div></div>
+      <div class="ed-feat"><div class="ed-feat-em">💬</div><div><div class="ed-feat-t">WhatsApp-First Ordering</div><div class="ed-feat-d">No checkout friction — chat directly and confirm your order in minutes</div></div></div>
+      <div class="ed-feat"><div class="ed-feat-em">✅</div><div><div class="ed-feat-t">VAT Inclusive, Always</div><div class="ed-feat-d">Every price shown already includes VAT — no surprises at checkout</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="fbrand-name">The MCC Shop</div>
+        <div class="fbrand-desc">Building Materials · Decor · Home & Office Furniture · Tools · Equipment. Delivering across all of Accra, Ghana.</div>
+        <a href="https://wa.me/233509919161?text=Hi%2C%20I%27d%20like%20to%20order%20from%20The%20MCC%20Shop" target="_blank" class="fwa-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967z M12.05 2C5.495 2 .16 7.335.157 13.892c0 2.096.547 4.142 1.588 5.945L.057 26l6.305-1.654A11.882 11.882 0 0012.05 22c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 2z"/></svg>
+          Order on WhatsApp
+        </a>
+      </div>
+      <div class="fcol">
+        <div class="fcol-t">Categories</div>
+        <ul id="fcats"></ul>
+      </div>
+      <div class="fcol">
+        <div class="fcol-t">Delivery</div>
+        <ul>
+          <li><a href="#">Home Delivery</a></li>
+          <li><a href="#">Office Delivery</a></li>
+          <li><a href="#">Construction Site</a></li>
+          <li><a href="#">Bulk Orders</a></li>
+          <li><a href="#">All of Accra</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <div class="fcol-t">Contact</div>
+        <ul>
+          <li><a href="https://wa.me/233509919161" target="_blank">+233 50 991 9161</a></li>
+          <li><a href="https://wa.me/233509919161?text=Hi" target="_blank">WhatsApp Chat</a></li>
+          <li><a href="#">Accra, Ghana</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2025 The MCC Shop · All prices VAT inclusive · Accra, Ghana</p>
+      <div class="foot-wa-num"><a href="https://wa.me/233509919161" target="_blank">WhatsApp: +233 50 991 9161</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="ovl" id="ovl" onclick="handleOvl(event)">
+  <div class="mdl">
+    <div class="mdl-top"><div class="mdl-em" id="mdl-em"></div><button class="mdl-x" onclick="closeModal()">✕</button></div>
+    <div class="mdl-body">
+      <div class="mdl-cr"><div class="mdl-cat" id="mdl-cat"></div><div class="mdl-sku" id="mdl-sku"></div></div>
+      <div class="mdl-name" id="mdl-name"></div>
+      <div class="mdl-specs" id="mdl-specs"></div>
+      <div class="mdl-pzone">
+        <div><div class="mdl-price" id="mdl-price"></div><div class="mdl-pvat">VAT inclusive · GHS</div></div>
+        <div class="mdl-blkbdg" id="mdl-blk"></div>
+      </div>
+      <div class="mdl-qrow">
+        <span class="mdl-qlbl">Quantity</span>
+        <div class="mdl-qctrl">
+          <button class="mq-btn" onclick="mqd(-1)">−</button>
+          <div class="mq-n" id="mq-n">1</div>
+          <button class="mq-btn" onclick="mqd(1)">+</button>
+        </div>
+        <div class="mdl-tot"><div class="mdl-tot-l">Total</div><div class="mdl-tot-v" id="mdl-tot"></div></div>
+      </div>
+      <button class="mdl-wa" style="background:var(--ink); margin-top: 10px; border:none; cursor:pointer;" onclick="addToCart(cp.sku, null, mq, true); closeModal(); openCheckout();">
+        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" width="22" height="22"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+        Request Quote on WhatsApp
+      </button>
+      <div style="display:flex; gap:10px; margin-top:10px;">
+        <button class="mdl-wa" style="flex:1; background:#0D1A12; border:none; cursor:pointer;" onclick="addToCart(cp.sku, null, mq, false); closeModal();">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="white" fill="none" width="20" height="20"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.97 1.61h9.72a2 2 0 001.97-1.61L23 6H6"/></svg>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cscrim" id="cscrim" onclick="closeCart()"></div>
+<div class="cdwr" id="cdwr">
+  <div class="cdwr-head"><h3>Enquiry List</h3><button class="cdwr-x" onclick="closeCart()">✕</button></div>
+  <div class="cdwr-body" id="cdwr-body"></div>
+  <div class="cdwr-foot" id="cdwr-foot" style="display:none">
+    <div class="ctot-row"><span class="ctot-l">Estimated Total</span><span class="ctot-v" id="ctot-v">GHS 0</span></div>
+    <button class="csend ccontinue" onclick="closeCart(); scrollTo('products');">
+      Continue Shopping
+    </button>
+    <button class="csend" onclick="openCheckout()" style="background:var(--ink); border:none; cursor:pointer;">
+      <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" width="19" height="19"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+      Request Quote
+    </button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="chkOvl" class="ovl" onclick="if(event.target===this) this.classList.remove('open')">
+  <div class="mdl">
+    <div class="mdl-head">
+      <div class="mdl-hwrap"><div class="mdl-cat">WhatsApp Enquiry</div><div class="mdl-name">Request a Quote</div></div>
+      <button class="mdl-x" onclick="document.getElementById('chkOvl').classList.remove('open')">✕</button>
+    </div>
+    <form id="checkoutForm" onsubmit="submitCheckout(event)" style="padding:24px;">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <input type="text" id="chkName" required placeholder="Full Name" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid var(--border); font-family:inherit; font-size: 16px;">
+        <input type="tel" id="chkPhone" required placeholder="Phone Number" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid var(--border); font-family:inherit; font-size: 16px;">
+        <textarea id="chkAddress" required placeholder="Exact Delivery Address / Digital Address" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid var(--border); font-family:inherit; font-size: 16px; min-height:80px; resize:vertical;"></textarea>
+        <input type="text" id="chkNotes" placeholder="Delivery Notes (Optional)" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid var(--border); font-family:inherit; font-size: 16px;">
+      </div>
+      <button type="submit" id="chkBtn" style="width:100%; margin-top:24px; padding:16px; background:var(--ink); color:white; border:none; border-radius:12px; font-weight:600; font-size:15px; cursor:pointer;">
+        Send Quote Request on WhatsApp
+      </button>
+      <button type="button" id="copyOrderBtn" onclick="copyOrderSummary()" style="width:100%; margin-top:10px; padding:13px; background:transparent; color:var(--t1); border:1px solid var(--border); border-radius:12px; font-weight:600; font-size:14px; cursor:pointer;">
+        Copy Order Summary
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+const WA='233509919161';
+const API_URL = window.MCC_API_URL || (location.hostname.includes('mccshopghana.com') ? 'https://mcc-shop-backend.vercel.app/api' : '/api');
+const CI={All:'🏪',Paints:'🎨',Boards:'🪵',Panels:'🏗️',Furniture:'🛋️',Imported:'🚢',Office:'🖥️',Kitchens:'🍳',Wardrobes:'🗄️',Doors:'🚪',Windows:'🪟',Flooring:'🏡',Adhesives:'🔧',Safety:'⛑️',Tools:'🔨',Electrical:'💡',Plumbing:'🚿',Hardware:'🔩'};
+const DI={Bike:'🏍️',Van:'🚐',Pickup:'🛻'};
+let P=[],ac='All',sq='',cart={},cp=null,mq=1;
+const CART_KEY='mcc_quote_cart';
+const CUSTOMER_KEY='mcc_quote_customer';
+
+const wl=msg=>`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+const getLoc=()=>'Accra';
+const om=(p,q)=>`Hi The MCC Shop! I'd like to order:\n\n• ${p.name} (${p.sku})\n  Unit: ${p.unit} × ${q}\n  Price: GHS ${(p.price*q).toLocaleString()} (VAT inclusive)\n  Delivery Mode: ${p.mode} ${DI[p.mode]}\n  Location: ${getLoc()}\n\nPlease confirm availability and delivery in Accra. Thank you!`;
+const bm=(items, name, phone, address, notes, vehicle)=>{
+  let m=`Hi The MCC Shop! I'd like to place an order:\n\n*Customer Details:*\n• Name: ${name}\n• Phone: ${phone}\n• Address: ${address}\n${notes ? '• Notes: '+notes+'\n' : ''}\n*Items:*\n`;
+  items.forEach(i=>{
+    const colNote=i.selectedColour?` [${i.selectedColour}]`:'';
+    const unitP=(i.bulkPrice && i.qty>=i.bulk)?i.bulkPrice:i.price;
+    const lineT=unitP*i.qty;
+    const bulkNote=(i.bulkPrice && i.qty>=i.bulk)?' (bulk rate)':'';
+    m+=`• ${i.name}${colNote} × ${i.qty} — GHS ${lineT.toLocaleString()}${bulkNote}\n`;
+  });
+  const t=items.reduce((s,i)=>{const unitP=(i.bulkPrice && i.qty>=i.bulk)?i.bulkPrice:i.price;return s+unitP*i.qty;},0);
+  m+=`\n*Total:* GHS ${t.toLocaleString()} (VAT incl.)\n*Vehicle:* ${vehicle} ${DI[vehicle] || ''}`;
+  if(items.some(i=>i.imported)){
+    m+=`\n\n⚠️ *Shipping Notice:* One or more items in this order are GECHI luxury imports shipped directly from China. Estimated delivery: 20–30 days. Please confirm availability and payment terms.`;
+  }
+  m+=`\n\nPlease confirm my order. Thank you!`;
+  return m;
+};
+
+function cleanQuoteMessage(items, name, phone, address, notes, vehicle){
+  let msg=`Hi The MCC Shop! I'd like to request a quote:\n\n*Customer Details:*\n- Name: ${name}\n- Phone: ${phone}\n- Address: ${address}\n${notes ? '- Notes: '+notes+'\n' : ''}\n*Items:*\n`;
+  items.forEach(item=>{
+    const colour=item.selectedColour?` [${item.selectedColour}]`:'';
+    const unitPrice=(item.bulkPrice && item.qty>=item.bulk)?item.bulkPrice:item.price;
+    const lineTotal=unitPrice*item.qty;
+    const bulkNote=(item.bulkPrice && item.qty>=item.bulk)?' (bulk rate)':'';
+    msg+=`- ${item.name}${colour} x ${item.qty} - GHS ${lineTotal.toLocaleString()}${bulkNote}\n`;
+  });
+  const total=items.reduce((sum,item)=>{
+    const unitPrice=(item.bulkPrice && item.qty>=item.bulk)?item.bulkPrice:item.price;
+    return sum+(unitPrice*item.qty);
+  },0);
+  msg+=`\n*Estimated Total:* GHS ${total.toLocaleString()} (VAT incl.)\n*Likely Vehicle:* ${vehicle}`;
+  if(items.some(item=>item.imported)){
+    msg+=`\n\n*Shipping Notice:* One or more items are GECHI luxury imports shipped directly from China. Estimated delivery: 20-30 days. Please confirm availability and payment terms.`;
+  }
+  msg+=`\n\nPlease confirm availability, delivery fee, and payment terms. Thank you!`;
+  return msg;
+}
+
+function saveCart(){
+  try{localStorage.setItem(CART_KEY,JSON.stringify(cart));}catch(e){}
+}
+
+function loadCart(){
+  try{cart=JSON.parse(localStorage.getItem(CART_KEY)||'{}')||{};}catch(e){cart={};}
+  updBdg();
+}
+
+function saveCustomerDetails(){
+  const data={
+    name:document.getElementById('chkName')?.value.trim()||'',
+    phone:document.getElementById('chkPhone')?.value.trim()||'',
+    address:document.getElementById('chkAddress')?.value.trim()||'',
+    notes:document.getElementById('chkNotes')?.value.trim()||''
+  };
+  try{localStorage.setItem(CUSTOMER_KEY,JSON.stringify(data));}catch(e){}
+}
+
+function restoreCustomerDetails(){
+  let data={};
+  try{data=JSON.parse(localStorage.getItem(CUSTOMER_KEY)||'{}')||{};}catch(e){}
+  [['chkName','name'],['chkPhone','phone'],['chkAddress','address'],['chkNotes','notes']].forEach(([id,key])=>{
+    const el=document.getElementById(id);
+    if(el && data[key]) el.value=data[key];
+  });
+}
+
+function getQuoteMessageFromForm(){
+  const name=document.getElementById('chkName').value.trim();
+  const phone=document.getElementById('chkPhone').value.trim();
+  const address=document.getElementById('chkAddress').value.trim();
+  const notes=document.getElementById('chkNotes').value.trim();
+  let bestMod='Bike';
+  if(Object.values(cart).some(item=>item.mode==='Van')) bestMod='Van';
+  if(Object.values(cart).some(item=>item.mode==='Pickup')) bestMod='Pickup';
+  return cleanQuoteMessage(Object.values(cart),name,phone,address,notes,bestMod);
+}
+
+/* ── INIT ── */
+(function() {
+  const dismissLoader = () => {
+    const ldr = document.getElementById('ldr');
+    if(ldr) {
+      ldr.classList.add('out');
+      console.log('Loader dismissed');
+    }
+  };
+
+  // Immediate fail-safe timeout (starts right away when script is parsed)
+  setTimeout(dismissLoader, 3000);
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    console.log('DOM Content Loaded - Initializing Products');
+
+    // Fallback list — used only if API is unreachable
+    const FALLBACK_PRODUCTS = [
+      // ── Paints ──────────────────────────────────────────────────────
+      { skuCode:"PNT-EMU-001",  name:"MCC Standard Emulsion Paint",          category:"Paints",    unitSize:"20 Litres",  sellingPrice:300,   bulkThreshold:5,  bulkPrice:280,   dispatchMode:"VAN",  images:"/mcc_emulsion_paint.jpeg", notes:"colours:White,Magnolia,Ivory,Grey,Broken White", mvpPriority:true  },
+      { skuCode:"PNT-ACR-001",  name:"MCC Acrylic Premium Emulsion Paint",    category:"Paints",    unitSize:"20 Litres",  sellingPrice:650,   bulkThreshold:3,  bulkPrice:620,   dispatchMode:"VAN",  images:"/acrylic_paint.jpg",       notes:"colours:White,Magnolia,Ivory,Grey,Broken White", mvpPriority:true  },
+      { skuCode:"PNT-OIL-001",  name:"Oil Paint",                             category:"Paints",    unitSize:"4 Litres",   sellingPrice:200,   bulkThreshold:10, bulkPrice:185,   dispatchMode:"BIKE", images:"/oil_paint.png",            notes:"colours:White,Dark Brown,Dark Grey",             mvpPriority:true  },
+      { skuCode:"PNT-THIN-001", name:"Paint Thinner",                         category:"Paints",    unitSize:"4 Litres",   sellingPrice:150,   bulkThreshold:10, bulkPrice:135,   dispatchMode:"BIKE", images:"/paint_thinner.jpg",        mvpPriority:false },
+      // ── Boards ──────────────────────────────────────────────────────
+      { skuCode:"PLB-9MM-001",  name:"Plasterboard 9mm",                      category:"Boards",    unitSize:"Sheet",      sellingPrice:150,   bulkThreshold:20, bulkPrice:135,   dispatchMode:"VAN",  images:"/plasterboard_9mm.jpg",     mvpPriority:true  },
+      { skuCode:"PLB-12MM-001", name:"Plasterboard 12mm",                     category:"Boards",    unitSize:"Sheet",      sellingPrice:200,   bulkThreshold:20, bulkPrice:180,   dispatchMode:"VAN",  images:"/plasterboard_12mm.jpg",    mvpPriority:true  },
+      { skuCode:"JNT-CMP-001",  name:"Joint Compound",                        category:"Boards",    unitSize:"20 Litres",  sellingPrice:350,   bulkThreshold:5,  bulkPrice:320,   dispatchMode:"VAN",  images:"/joint_compound.jpg",       mvpPriority:true  },
+      { skuCode:"JNT-PWD-001",  name:"Joint Powder",                          category:"Boards",    unitSize:"25kg Bag",   sellingPrice:350,   bulkThreshold:5,  bulkPrice:320,   dispatchMode:"VAN",  images:"/skimming_powder.jpg",      mvpPriority:true  },
+      // ── Panels ──────────────────────────────────────────────────────
+      { skuCode:"PVC-PNL-001",  name:"PVC Ceiling Panels",                    category:"Panels",    unitSize:"Per Piece",  sellingPrice:60,    bulkThreshold:50, bulkPrice:55,    dispatchMode:"VAN",  images:"/ceiling_panel.jpeg",       notes:"colours:White,Brown",                           mvpPriority:true  },
+      { skuCode:"PVC-BD-001",   name:"PVC Ceiling Boards",                    category:"Panels",    unitSize:"Per Sheet",  sellingPrice:40,    bulkThreshold:50, bulkPrice:36,    dispatchMode:"VAN",  images:"/pvc_ceiling_board.jpg",    mvpPriority:false },
+      { skuCode:"WCL-001",      name:"Wall Cladding",                         category:"Panels",    unitSize:"Per m²",     sellingPrice:150,   bulkThreshold:20, bulkPrice:135,   dispatchMode:"VAN",  images:"/wall_cladding.jpg",        mvpPriority:false },
+      // ── Furniture — Sofas ───────────────────────────────────────────
+      { skuCode:"SFA-FAB-3S",   name:"3-Seater Fabric Sofa",                  category:"Furniture", unitSize:"Unit",       sellingPrice:2500,  bulkThreshold:2,  bulkPrice:2400,  dispatchMode:"VAN",  images:"/sofa_fabric_3s.jpg",       mvpPriority:true  },
+      { skuCode:"SFA-FAB-LS",   name:"L-Shaped Fabric Sofa",                  category:"Furniture", unitSize:"Unit",       sellingPrice:4600,  bulkThreshold:2,  bulkPrice:4400,  dispatchMode:"VAN",  images:"/sofa_fabric_ls.jpg",       mvpPriority:true  },
+      { skuCode:"SFA-LEA-LS",   name:"L-Shaped Half Leather Sofa",            category:"Furniture", unitSize:"Unit",       sellingPrice:7000,  bulkThreshold:2,  bulkPrice:6700,  dispatchMode:"VAN",  images:"/sofa_leather_ls.jpg",      mvpPriority:true  },
+      { skuCode:"SFA-LEA-LUX",  name:"Full Leather Luxury Sofa",              category:"Furniture", unitSize:"Unit",       sellingPrice:15000, bulkThreshold:2,  bulkPrice:14500, dispatchMode:"VAN",  images:"/sofa_leather_lux.jpg",     mvpPriority:true  },
+      // ── Furniture — Beds & Mattresses ───────────────────────────────
+      { skuCode:"BED-UPH-QN",   name:"Queen Size Upholstered Bed",            category:"Furniture", unitSize:"Unit",       sellingPrice:2000,  bulkThreshold:2,  bulkPrice:1900,  dispatchMode:"VAN",  images:"/bed_queen.jpg",            mvpPriority:true  },
+      { skuCode:"MAT-QN-001",   name:"Queen Size Mattress",                   category:"Furniture", unitSize:"Unit",       sellingPrice:1400,  bulkThreshold:2,  bulkPrice:1350,  dispatchMode:"VAN",  images:"/mattress.jpg",             mvpPriority:true  },
+      { skuCode:"BED-UPH-KG",   name:"King Size Upholstered Bed",             category:"Furniture", unitSize:"Unit",       sellingPrice:4000,  bulkThreshold:2,  bulkPrice:3800,  dispatchMode:"VAN",  images:"/bed_king.jpg",             mvpPriority:true  },
+      { skuCode:"MAT-KG-001",   name:"King Size Mattress",                    category:"Furniture", unitSize:"Unit",       sellingPrice:2000,  bulkThreshold:2,  bulkPrice:1900,  dispatchMode:"VAN",  images:"/mattress.jpg",             mvpPriority:true  },
+      // ── Furniture — Dining ──────────────────────────────────────────
+      { skuCode:"DIN-4ST-001",  name:"4-Seater Dining Set",                   category:"Furniture", unitSize:"Set",        sellingPrice:4500,  bulkThreshold:2,  bulkPrice:4300,  dispatchMode:"VAN",  images:"/dining_4s.jpg",            mvpPriority:true  },
+      { skuCode:"DIN-6ST-001",  name:"6-Seater Dining Set",                   category:"Furniture", unitSize:"Set",        sellingPrice:6000,  bulkThreshold:2,  bulkPrice:5700,  dispatchMode:"VAN",  images:"/dining_6s.jpg",            mvpPriority:true  },
+      { skuCode:"DIN-LUX-001",  name:"Marble / Ceramic Luxury Dining Set",   category:"Furniture", unitSize:"Set",        sellingPrice:8000,  bulkThreshold:2,  bulkPrice:7600,  dispatchMode:"VAN",  images:"/dining_luxury.jpg",        mvpPriority:true  },
+      // ── GECHI Luxury Imports — Ships from China (20–30 days) ────────
+      { skuCode:"GCH-SFA-PET",  name:"GECHI Edra Petal Sofa",                 category:"Imported",  unitSize:"Unit",       sellingPrice:2500,  bulkThreshold:2,  bulkPrice:2400,  dispatchMode:"VAN",  images:"/gechi_edra_petal.jpg",     notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-SFA-ROC",  name:"GECHI Edra Rock Sofa (L-Shaped)",       category:"Imported",  unitSize:"Unit",       sellingPrice:4600,  bulkThreshold:2,  bulkPrice:4400,  dispatchMode:"VAN",  images:"/gechi_edra_rock.jpg",      notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-SFA-LAW",  name:"GECHI Lawrence Modular Sofa (Straight)",category:"Imported",  unitSize:"Unit",       sellingPrice:4600,  bulkThreshold:2,  bulkPrice:4400,  dispatchMode:"VAN",  images:"/gechi_lawrence_str.jpg",   notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-SFA-LAC",  name:"GECHI Lawrence Modular Sofa (Corner)",  category:"Imported",  unitSize:"Unit",       sellingPrice:7000,  bulkThreshold:2,  bulkPrice:6700,  dispatchMode:"VAN",  images:"/gechi_lawrence_cor.jpg",   notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-SFA-BLZ",  name:"GECHI Blazer Sofa",                     category:"Imported",  unitSize:"Unit",       sellingPrice:7000,  bulkThreshold:2,  bulkPrice:6700,  dispatchMode:"VAN",  images:"/gechi_blazer.jpg",         notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-SFA-K24",  name:"GECHI K2419 Full Leather Sofa",         category:"Imported",  unitSize:"Unit",       sellingPrice:15000, bulkThreshold:2,  bulkPrice:14500, dispatchMode:"VAN",  images:"/gechi_k2419.jpg",          notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-SFA-LUX",  name:"GECHI Full Leather Luxury Sofa",        category:"Imported",  unitSize:"Unit",       sellingPrice:15000, bulkThreshold:2,  bulkPrice:14500, dispatchMode:"VAN",  images:"/gechi_lux_sofa.jpg",       notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-DIN-NIC",  name:"GECHI Nico Long Dining Table",          category:"Imported",  unitSize:"Unit",       sellingPrice:15000, bulkThreshold:2,  bulkPrice:14500, dispatchMode:"VAN",  images:"/gechi_nico_table.jpg",     notes:"import:China,days:20-30", mvpPriority:true  },
+      { skuCode:"GCH-CHR-PRE",  name:"GECHI Premium Dining Chair",            category:"Imported",  unitSize:"Per Chair",  sellingPrice:1800,  bulkThreshold:4,  bulkPrice:1700,  dispatchMode:"VAN",  images:"/gechi_dining_chair.jpg",   notes:"import:China,days:20-30", mvpPriority:true  },
+      // ── MCC Showroom Collection — Ships from China (20–30 days) ─────
+      { skuCode:"SHW-SFA-CK820", name:"CK820W Full Leather Curved Sofa",          category:"Imported", unitSize:"Unit",      sellingPrice:37600, bulkThreshold:2, bulkPrice:35900, dispatchMode:"VAN", images:"/showroom_ck820w.jpeg",        notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-SFA-CK815", name:"CK815W L-Shaped Full Leather Sofa",        category:"Imported", unitSize:"Unit",      sellingPrice:38800, bulkThreshold:2, bulkPrice:37000, dispatchMode:"VAN", images:"/showroom_ck815w.jpeg",        notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-SFA-CK812", name:"CK812W Fabric Modular Sofa",               category:"Imported", unitSize:"Unit",      sellingPrice:49400, bulkThreshold:2, bulkPrice:47000, dispatchMode:"VAN", images:"/showroom_ck812w.jpeg",        notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-SFA-CK810", name:"CK810W Genuine Leather Sofa",              category:"Imported", unitSize:"Unit",      sellingPrice:41100, bulkThreshold:2, bulkPrice:39100, dispatchMode:"VAN", images:"/showroom_ck810w.jpeg",        notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-SFA-K2516", name:"K2516 Premium Fabric Sofa",                category:"Imported", unitSize:"Unit",      sellingPrice:29400, bulkThreshold:2, bulkPrice:28000, dispatchMode:"VAN", images:"/showroom_k2419_fabric.jpeg",  notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-CHR-A152",  name:"A152 Designer Lounge Chair",               category:"Imported", unitSize:"Unit",      sellingPrice:4100,  bulkThreshold:2, bulkPrice:3900,  dispatchMode:"VAN", images:"/showroom_a152_chair.jpeg",    notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BED-P652",  name:"P652 Genuine Leather Luxury Bed",          category:"Imported", unitSize:"Unit",      sellingPrice:17600, bulkThreshold:2, bulkPrice:16800, dispatchMode:"VAN", images:"/showroom_p652_bed.jpeg",      notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BED-FSKY",  name:"Fendi Sky S Luxury Bed",                   category:"Imported", unitSize:"Unit",      sellingPrice:32900, bulkThreshold:2, bulkPrice:31400, dispatchMode:"VAN", images:"/showroom_fendi_sky_bed.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BED-1825",  name:"1825B Full Leather Soft Bed",              category:"Imported", unitSize:"Unit",      sellingPrice:12900, bulkThreshold:2, bulkPrice:12300, dispatchMode:"VAN", images:"/showroom_1825b_bed.jpeg",     notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DIN-MS25",  name:"MS-25 Luxury Stone Dining Table",          category:"Imported", unitSize:"Unit",      sellingPrice:23500, bulkThreshold:2, bulkPrice:22400, dispatchMode:"VAN", images:"/showroom_ms25_table.jpeg",    notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DIN-VS18",  name:"VS18 Rose Gold & Stone Dining Table",      category:"Imported", unitSize:"Unit",      sellingPrice:23500, bulkThreshold:2, bulkPrice:22400, dispatchMode:"VAN", images:"/showroom_vs18_table.jpeg",    notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-CHR-SHEL",  name:"Shell Fan-Back Dining Chair",              category:"Imported", unitSize:"Per Chair", sellingPrice:2200,  bulkThreshold:4, bulkPrice:2100,  dispatchMode:"VAN", images:"/showroom_chair_shell.jpeg",   notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-CHR-CONE",  name:"Modern Cone-Base Dining Chair",            category:"Imported", unitSize:"Per Chair", sellingPrice:2900,  bulkThreshold:4, bulkPrice:2800,  dispatchMode:"VAN", images:"/showroom_chair_cone.jpeg",    notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-MAT-BAL",   name:"GECHI Balance Comfort Mattress",           category:"Imported", unitSize:"Unit",      sellingPrice:2400,  bulkThreshold:2, bulkPrice:2300,  dispatchMode:"VAN", images:"/showroom_mattress_balance.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-MAT-GRV",   name:"GECHI Gravity Support Mattress",           category:"Imported", unitSize:"Unit",      sellingPrice:4100,  bulkThreshold:2, bulkPrice:3900,  dispatchMode:"VAN", images:"/showroom_mattress_gravity.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-MAT-LF1",   name:"GECHI Life No.1 Mattress",                 category:"Imported", unitSize:"Unit",      sellingPrice:4100,  bulkThreshold:2, bulkPrice:3900,  dispatchMode:"VAN", images:"/showroom_mattress_life1.jpeg",  notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-MAT-3DF",   name:"GECHI 3D Firm Orthopedic Mattress",        category:"Imported", unitSize:"Unit",      sellingPrice:3100,  bulkThreshold:2, bulkPrice:2950,  dispatchMode:"VAN", images:"/showroom_mattress_3dfirm.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-MAT-AVI",   name:"Aviation Comfort 3.0 Mattress",            category:"Imported", unitSize:"Unit",      sellingPrice:4100,  bulkThreshold:2, bulkPrice:3900,  dispatchMode:"VAN", images:"/showroom_mattress_aviation.jpeg",notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BST-ST329", name:"ST329 Solid Wood & Leather Bedside Table", category:"Imported", unitSize:"Unit",      sellingPrice:2900,  bulkThreshold:2, bulkPrice:2800,  dispatchMode:"VAN", images:"/showroom_st329_bedside.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BST-ST037", name:"ST037A Smoked Oak Bedside Table",          category:"Imported", unitSize:"Unit",      sellingPrice:3900,  bulkThreshold:2, bulkPrice:3700,  dispatchMode:"VAN", images:"/showroom_st037a_bedside.jpeg",notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BST-ST085", name:"ST085 Smart Bedside Table (Wireless Charging)", category:"Imported", unitSize:"Unit", sellingPrice:1400,  bulkThreshold:2, bulkPrice:1300,  dispatchMode:"VAN", images:"/showroom_st085_bedside.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BST-ST230", name:"ST230 Leather Bedside Table with Safe",    category:"Imported", unitSize:"Unit",      sellingPrice:3900,  bulkThreshold:2, bulkPrice:3700,  dispatchMode:"VAN", images:"/showroom_st230_bedside.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-BST-ST005", name:"ST005 Glossy Bedside Table",               category:"Imported", unitSize:"Unit",      sellingPrice:1400,  bulkThreshold:2, bulkPrice:1300,  dispatchMode:"VAN", images:"/showroom_st005_bedside.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DSK-S1274", name:"S1274 Smoked Oak Executive Desk",          category:"Imported", unitSize:"Unit",      sellingPrice:5900,  bulkThreshold:2, bulkPrice:5600,  dispatchMode:"VAN", images:"/showroom_s1274_desk.jpeg",    notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DSK-S1258", name:"S1258 Walnut Designer Desk",               category:"Imported", unitSize:"Unit",      sellingPrice:10000, bulkThreshold:2, bulkPrice:9500,  dispatchMode:"VAN", images:"/showroom_s1258_desk.jpeg",    notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DRS-T592",  name:"T59-2 Dressing Table with Drawer Chest",   category:"Imported", unitSize:"Unit",      sellingPrice:5900,  bulkThreshold:2, bulkPrice:5600,  dispatchMode:"VAN", images:"/showroom_t592_dressing.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DRS-T103",  name:"T103 LED Dressing Table with Chest",       category:"Imported", unitSize:"Unit",      sellingPrice:6500,  bulkThreshold:2, bulkPrice:6200,  dispatchMode:"VAN", images:"/showroom_t103_dressing.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DRS-T97",   name:"T97 Dressing Table with Flip Mirror",      category:"Imported", unitSize:"Unit",      sellingPrice:6500,  bulkThreshold:2, bulkPrice:6200,  dispatchMode:"VAN", images:"/showroom_t97_dressing.jpeg",  notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-DRS-T56",   name:"T56 Dressing Table with Mirror & Stool",   category:"Imported", unitSize:"Unit",      sellingPrice:5900,  bulkThreshold:2, bulkPrice:5600,  dispatchMode:"VAN", images:"/showroom_t56_dressing.jpeg",  notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-CHR-Y18",   name:"Y18 Swivel Accent Chair",                  category:"Imported", unitSize:"Unit",      sellingPrice:1400,  bulkThreshold:2, bulkPrice:1300,  dispatchMode:"VAN", images:"/showroom_y18_chair.jpeg",     notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-CHT-D11",   name:"D11 Wide & Tall Drawer Chest",             category:"Imported", unitSize:"Unit",      sellingPrice:4700,  bulkThreshold:2, bulkPrice:4500,  dispatchMode:"VAN", images:"/showroom_d11_chest.jpeg",     notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-STB-ST250", name:"ST250 Oval Wood Side Table",               category:"Imported", unitSize:"Unit",      sellingPrice:2100,  bulkThreshold:2, bulkPrice:2000,  dispatchMode:"VAN", images:"/showroom_st250_sidetable.jpeg",notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-STB-B006",  name:"B006 Sculptural Fiberglass Side Table",    category:"Imported", unitSize:"Unit",      sellingPrice:2200,  bulkThreshold:2, bulkPrice:2100,  dispatchMode:"VAN", images:"/showroom_b006_sidetable.jpeg",notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-SBD-C151",  name:"C15-1 Italian Monica Marble Sideboard",    category:"Imported", unitSize:"Unit",      sellingPrice:11800, bulkThreshold:2, bulkPrice:11200, dispatchMode:"VAN", images:"/showroom_c151_sideboard.jpeg",notes:"import:China,days:20-30", mvpPriority:true },
+      { skuCode:"SHW-SBD-C35",   name:"C35 Walnut & Picasso Stone Sideboard",     category:"Imported", unitSize:"Unit",      sellingPrice:15300, bulkThreshold:2, bulkPrice:14600, dispatchMode:"VAN", images:"/showroom_c35_sideboard.jpeg", notes:"import:China,days:20-30", mvpPriority:true },
+      // -- Office Furniture (GECHi Italian Design) --
+      { skuCode:"OFF-DSK-SM",  name:"Executive Desk Small (1.8m)",           category:"Office",    unitSize:"Unit",      sellingPrice:3100,   bulkThreshold:2,  bulkPrice:2900,  dispatchMode:"VAN",  images:"/office_desk_sm.jpg",   mvpPriority:true  },
+      { skuCode:"OFF-DSK-MD",  name:"Executive Desk Medium (2.4m)",          category:"Office",    unitSize:"Unit",      sellingPrice:6100,   bulkThreshold:2,  bulkPrice:5800,  dispatchMode:"VAN",  images:"/office_desk_md.jpg",   mvpPriority:true  },
+      { skuCode:"OFF-DSK-LG",  name:"Executive Desk Large (3.2m + Cabinet)", category:"Office",    unitSize:"Unit",      sellingPrice:7900,   bulkThreshold:2,  bulkPrice:7500,  dispatchMode:"VAN",  images:"/office_desk_lg.jpg",   mvpPriority:true  },
+      { skuCode:"OFF-CHR-VIS", name:"Visitor Chair",                         category:"Office",    unitSize:"Unit",      sellingPrice:700,    bulkThreshold:4,  bulkPrice:650,   dispatchMode:"VAN",  images:"/office_chair_vis.jpg",       mvpPriority:true  },
+      { skuCode:"OFF-CHR-MID", name:"Mid-level Swivel Chair",                category:"Office",    unitSize:"Unit",      sellingPrice:1200,   bulkThreshold:4,  bulkPrice:1100,  dispatchMode:"VAN",  images:"/office_chair_mid.jpg",       mvpPriority:true  },
+      { skuCode:"OFF-CHR-EXC", name:"Executive Leather Chair",               category:"Office",    unitSize:"Unit",      sellingPrice:2500,   bulkThreshold:2,  bulkPrice:2300,  dispatchMode:"VAN",  images:"/office_chair_exc.jpg",       mvpPriority:true  },
+      { skuCode:"OFF-WRK-2P",  name:"2-Person Workstation",                  category:"Office",    unitSize:"Set",       sellingPrice:2500,   bulkThreshold:2,  bulkPrice:2300,  dispatchMode:"VAN",  images:"/office_wst_2p.jpg", mvpPriority:true  },
+      { skuCode:"OFF-WRK-4P",  name:"4-Person Workstation",                  category:"Office",    unitSize:"Set",       sellingPrice:4500,   bulkThreshold:2,  bulkPrice:4300,  dispatchMode:"VAN",  images:"/office_wst_4p.jpg", mvpPriority:true  },
+      { skuCode:"OFF-WRK-6P",  name:"6-8 Person Workstation",                category:"Office",    unitSize:"Set",       sellingPrice:7000,   bulkThreshold:2,  bulkPrice:6700,  dispatchMode:"VAN",  images:"/office_wst_6p.jpg", mvpPriority:true  },
+      // -- Kitchens (Custom Built) --
+      { skuCode:"KIT-BUD-001", name:"Budget Kitchen (Custom Built)",         category:"Kitchens",  unitSize:"Full Set",  sellingPrice:45000,  bulkThreshold:1,  bulkPrice:43000, dispatchMode:"VAN",  images:"/kitchen_budget.jpg",     notes:"custom:true", mvpPriority:true  },
+      { skuCode:"KIT-STD-001", name:"Standard Kitchen (Custom Built)",       category:"Kitchens",  unitSize:"Full Set",  sellingPrice:75000,  bulkThreshold:1,  bulkPrice:72000, dispatchMode:"VAN",  images:"/kitchen_standard.jpg",   notes:"custom:true", mvpPriority:true  },
+      { skuCode:"KIT-PRE-001", name:"Premium Kitchen (Custom Built)",        category:"Kitchens",  unitSize:"Full Set",  sellingPrice:150000, bulkThreshold:1,  bulkPrice:145000,dispatchMode:"VAN",  images:"/kitchen_premium.jpg",    notes:"custom:true", mvpPriority:true  },
+      // -- Wardrobes & Storage --
+      { skuCode:"WRD-SLD-001", name:"Sliding Wardrobe",                      category:"Wardrobes", unitSize:"Per m2",    sellingPrice:900,    bulkThreshold:5,  bulkPrice:850,   dispatchMode:"VAN",  images:"/wardrobe_sliding.jpg",   mvpPriority:true  },
+      { skuCode:"WRD-HNG-001", name:"Hinged Wardrobe",                       category:"Wardrobes", unitSize:"Per m2",    sellingPrice:800,    bulkThreshold:5,  bulkPrice:750,   dispatchMode:"VAN",  images:"/wardrobe_hinged.jpg",    mvpPriority:true  },
+      { skuCode:"WRD-WLK-001", name:"Walk-in Closet (Custom)",               category:"Wardrobes", unitSize:"Custom",    sellingPrice:5000,   bulkThreshold:1,  bulkPrice:4800,  dispatchMode:"VAN",  images:"/wardrobe_walkin.jpg",    notes:"custom:true", mvpPriority:true  },
+      { skuCode:"WRD-TVU-001", name:"TV Wall Unit",                          category:"Wardrobes", unitSize:"Unit",      sellingPrice:2500,   bulkThreshold:2,  bulkPrice:2300,  dispatchMode:"VAN",  images:"/tv_wall_unit.jpg",       mvpPriority:true  },
+      // -- Doors --
+      { skuCode:"DOR-WOD-001", name:"Wooden Door",                           category:"Doors",     unitSize:"Per Door",  sellingPrice:850,    bulkThreshold:5,  bulkPrice:800,   dispatchMode:"VAN",  images:"/door_wooden.jpg",        mvpPriority:true  },
+      { skuCode:"DOR-SEC-001", name:"Security Door",                         category:"Doors",     unitSize:"Per Door",  sellingPrice:1200,   bulkThreshold:3,  bulkPrice:1100,  dispatchMode:"VAN",  images:"/door_security.jpg",      mvpPriority:true  },
+      { skuCode:"DOR-WPC-001", name:"WPC Door",                              category:"Doors",     unitSize:"Per Door",  sellingPrice:900,    bulkThreshold:5,  bulkPrice:850,   dispatchMode:"VAN",  images:"/door_wpc.jpg",           mvpPriority:true  },
+      { skuCode:"DOR-MDF-001", name:"MDF Door",                              category:"Doors",     unitSize:"Per Door",  sellingPrice:700,    bulkThreshold:5,  bulkPrice:650,   dispatchMode:"VAN",  images:"/door_mdf.jpg",           mvpPriority:false },
+      { skuCode:"DOR-LAM-001", name:"Laminate Door",                         category:"Doors",     unitSize:"Per Door",  sellingPrice:750,    bulkThreshold:5,  bulkPrice:700,   dispatchMode:"VAN",  images:"/door_laminate.jpg",      mvpPriority:false },
+      { skuCode:"DOR-GLS-001", name:"Glass Door",                            category:"Doors",     unitSize:"Per Door",  sellingPrice:950,    bulkThreshold:3,  bulkPrice:900,   dispatchMode:"VAN",  images:"/door_glass.jpg",         mvpPriority:true  },
+      // -- Glazing Windows --
+      { skuCode:"WIN-ALU-001", name:"Aluminium Sliding Window",              category:"Windows",   unitSize:"Per m2",    sellingPrice:650,    bulkThreshold:10, bulkPrice:600,   dispatchMode:"VAN",  images:"/window_sliding.jpg",     mvpPriority:true  },
+      { skuCode:"WIN-CAS-001", name:"Casement Window",                       category:"Windows",   unitSize:"Per m2",    sellingPrice:700,    bulkThreshold:10, bulkPrice:650,   dispatchMode:"VAN",  images:"/window_casement.jpg",    mvpPriority:true  },
+      { skuCode:"WIN-FIX-001", name:"Fixed Window",                          category:"Windows",   unitSize:"Per m2",    sellingPrice:600,    bulkThreshold:10, bulkPrice:550,   dispatchMode:"VAN",  images:"/window_fixed.jpg",       mvpPriority:false },
+      { skuCode:"WIN-TMP-001", name:"Tempered Glass Window",                 category:"Windows",   unitSize:"Per m2",    sellingPrice:800,    bulkThreshold:5,  bulkPrice:750,   dispatchMode:"VAN",  images:"/window_tempered.jpg",    mvpPriority:true  },
+      { skuCode:"WIN-TNT-001", name:"Tinted Glass Window",                   category:"Windows",   unitSize:"Per m2",    sellingPrice:750,    bulkThreshold:5,  bulkPrice:700,   dispatchMode:"VAN",  images:"/window_tinted.jpg",      mvpPriority:false },
+      // -- Flooring --
+      { skuCode:"FLR-POR-001", name:"Porcelain Tiles",                       category:"Flooring",  unitSize:"Per m2",    sellingPrice:50,     bulkThreshold:50, bulkPrice:45,    dispatchMode:"VAN",  images:"/flooring_porcelain.jpg", mvpPriority:true  },
+      { skuCode:"FLR-GRN-001", name:"Granite Tiles",                         category:"Flooring",  unitSize:"Per m2",    sellingPrice:60,     bulkThreshold:50, bulkPrice:55,    dispatchMode:"VAN",  images:"/flooring_granite.jpg",   mvpPriority:true  },
+      { skuCode:"FLR-SPC-001", name:"SPC / Vinyl Flooring",                  category:"Flooring",  unitSize:"Per m2",    sellingPrice:120,    bulkThreshold:30, bulkPrice:110,   dispatchMode:"VAN",  images:"/flooring_spc.jpg",       mvpPriority:true  },
+      { skuCode:"FLR-LAM-001", name:"Laminate Flooring",                     category:"Flooring",  unitSize:"Per m2",    sellingPrice:100,    bulkThreshold:30, bulkPrice:90,    dispatchMode:"VAN",  images:"/flooring_laminate.jpg",  mvpPriority:true  }
+    ];
+
+    const parseColours = notes => {
+      if (!notes) return null;
+      const m = notes.match(/colours:(.+)/);
+      return m ? m[1].split(',').map(c=>c.trim()) : null;
+    };
+    const assetPath = value => {
+      if (!value) return null;
+      const src = String(value).trim();
+      if (/^https?:\/\//i.test(src)) return src;
+      if (src.startsWith('/uploads/') && /^https?:\/\//i.test(API_URL)) {
+        return new URL(src, API_URL).href;
+      }
+      return src.replace(/^\/+/, '');
+    };
+    const mapProduct = p => ({
+      sku: p.skuCode,
+      cat: p.category || 'Other',
+      name: p.name,
+      unit: p.unitSize || 'Unit',
+      price: p.sellingPrice || 0,
+      bulk: p.bulkThreshold || 5,
+      bulkPrice: p.bulkPrice || null,
+      mode: p.dispatchMode === 'VAN' ? 'Van' : (p.dispatchMode === 'PICKUP' ? 'Pickup' : 'Bike'),
+      icon: CI[p.category] || '📦',
+      img: assetPath(p.images),
+      colours: parseColours(p.notes),
+      imported: !!(p.notes && p.notes.includes('import:China'))
+    });
+
+    async function loadCatalogProducts() {
+      try {
+        const res = await fetch(`${API_URL}/products?limit=200`, { cache: 'no-store' });
+        if (!res.ok) throw new Error('Product API unavailable');
+        const data = await res.json();
+        const apiProducts = Array.isArray(data.products) ? data.products : [];
+        return apiProducts.length ? apiProducts : FALLBACK_PRODUCTS;
+      } catch (err) {
+        console.warn('Using embedded product catalogue:', err.message || err);
+        return FALLBACK_PRODUCTS;
+      }
+    }
+
+    // Backend product catalogue first, embedded catalogue as fallback.
+    showSkeletons();
+    P = (await loadCatalogProducts()).map(mapProduct);
+
+    try {
+      buildTabs(); renderGrid(); buildHeroFeat(); buildFCats(); loadCart(); restoreCustomerDetails();
+      initCursor(); initReveal(); initNav(); initCanvas(); initMagneticCards();
+    } catch(e) {
+      console.error("Initialization error:", e);
+    }
+    // Fade out after a short dramatic pause
+    setTimeout(dismissLoader, 1500);
+  });
+})();
+
+function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+/* ── HERO CANVAS ── */
+function initCanvas(){
+  const c=document.getElementById('heroCanvas');
+  const ctx=c.getContext('2d');
+  let W,H,pts=[];
+  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;if(!pts.length)init();}
+  function init(){pts=Array.from({length:80},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5,o:Math.random()*.5+.2}));}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(46,139,101,${p.o})`;ctx.fill();});
+    pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(46,139,101,${.12*(1-d/120)})`;ctx.lineWidth=.5;ctx.stroke();}}));
+    requestAnimationFrame(draw);
+  }
+  new ResizeObserver(resize).observe(c);
+  resize(); draw();
+}
+
+/* ── HERO FEAT ── */
+function buildHeroFeat(){
+  if (P.length === 0) return;
+  const ft=[P[0]||P[0], P[1]||P[0], P[2]||P[0], P[3]||P[0]];
+  document.getElementById('heroFeat').innerHTML=`
+    <div class="fcard top">
+      <div class="fcard-em">${ft[0].img ? `<img src="${ft[0].img}" style="width:100%;height:100%;object-fit:cover;border-radius:16px" onerror="this.style.display='none';this.nextSibling.style.display='block'"><span style="display:none">${ft[0].icon}</span>` : ft[0].icon}</div>
+      <div><div class="fcard-cat">${ft[0].cat}</div><div class="fcard-name">${ft[0].name}</div><div class="fcard-price">GHS ${ft[0].price.toLocaleString()} <sup>/ ${ft[0].unit}</sup></div></div>
+    </div>
+    <div class="fcard-smalls">
+      ${ft.slice(1).map(p=>`<div class="fcard"><div class="fcard-em" style="font-size:28px;margin-bottom:0">${p.img ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:10px" onerror="this.style.display='none';">` : p.icon}</div><div><div class="fcard-cat">${p.cat}</div><div class="fcard-name" style="font-size:15px">${p.name}</div></div></div>`).join('')}
+    </div>`;
+}
+
+/* ── FILTERS ── */
+function buildTabs(){
+  const cats=['All',...new Set(P.map(p=>p.cat))];
+  document.getElementById('ftabs').innerHTML=cats.map(c=>{
+    const n=c==='All'?P.length:P.filter(p=>p.cat===c).length;
+    return`<button class="ftab${c===ac?' on':''}" onclick="setCat(this,'${c}')"><span class="ftab-ic">${CI[c]||'📦'}</span> ${c} <span class="ftab-n">${n}</span></button>`;
+  }).join('');
+}
+function setCat(btn,cat){ac=cat;document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderGrid();}
+function doSearch(){sq=document.getElementById('si').value.trim().toLowerCase();renderGrid();}
+function doMobileSearch(){sq=document.getElementById('si-mobile').value.trim().toLowerCase();renderGrid();}
+function openMobileSearch(){const o=document.getElementById('srchOverlay');o.classList.add('open');setTimeout(()=>document.getElementById('si-mobile').focus(),50);}
+function closeMobileSearch(){document.getElementById('srchOverlay').classList.remove('open');}
+
+/* ── GRID ── */
+function renderGrid(){
+  const f=P.filter(p=>(ac==='All'||p.cat===ac)&&(!sq||p.name.toLowerCase().includes(sq)||p.cat.toLowerCase().includes(sq)||p.sku.toLowerCase().includes(sq)));
+  const g=document.getElementById('pgrid');
+  if(!f.length){g.innerHTML=`<div class="empty-msg"><div class="ei">🔍</div><h3>Nothing found</h3><p>Try a different search or browse all categories</p></div>`;return;}
+  g.innerHTML=f.map((p,i)=>`
+<div class="pcard" style="animation-delay:${i*.05}s" data-sku="${p.sku}">
+  <div class="pcard-img" onclick="openModal('${p.sku}')" style="cursor:pointer;overflow:hidden;">
+    ${p.img ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=pcard-placeholder><span>${p.name.charAt(0)}</span></div>')">` : `<div class="pcard-placeholder"><span>${p.name.charAt(0)}</span></div>`}
+    <div class="pcard-badges"><span class="badge-vat">VAT Incl.</span><span class="badge-del">${DI[p.mode]||''} ${p.mode}</span></div>
+  </div>
+  <div class="pcard-body" onclick="openModal('${p.sku}')">
+    <div class="pcard-top"><span class="pcard-cat">${p.cat}</span><span class="pcard-sku">${p.sku}</span></div>
+    <div class="pcard-name">${p.name}</div>
+    ${p.colours ? `<div class="pcard-colours">${p.colours.map((c,ci)=>`<button class="clr-pill${ci===0?' on':''}" onclick="selectColour(this,'${p.sku}',event)" data-colour="${c}">${c}</button>`).join('')}</div>` : `<div class="pcard-unit">📐 ${p.unit}</div>`}
+    <div class="pcard-price-area">
+      <div class="pcard-price">GHS ${p.price.toLocaleString()}<span class="pcard-price-unit">/ ${p.unit}</span></div>
+      <div class="pcard-bulk">Bulk discount at ${p.bulk}+</div>
+    </div>
+  </div>
+  <div class="pcard-foot">
+    <div class="qty-ctrl">
+      <button class="qty-b" onclick="cqty('${p.sku}',-1,event)">−</button>
+      <div class="qty-v" id="cq-${p.sku}">1</div>
+      <button class="qty-b" onclick="cqty('${p.sku}',1,event)">+</button>
+    </div>
+    <button class="order-btn" onclick="addToCart('${p.sku}', event, parseInt(document.getElementById('cq-${p.sku}').textContent), true); openCheckout();" style="border:none; cursor:pointer;">
+      <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2.5" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+      Buy Now
+    </button>
+    <button class="order-btn add-to-cart-btn" style="background:#0D1A12;" onclick="addToCart('${p.sku}', event, null, false)">
+      Add to List
+    </button>
+    <button class="detail-btn" onclick="openModal('${p.sku}', event)">
+      <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    </button>
+  </div>
+</div>`).join('');
+  initMagneticCards();
+  if(window._attachCursorHover) window._attachCursorHover();
+}
+
+function cqty(sku,d,e){
+  e.stopPropagation();
+  const el=document.getElementById('cq-'+sku);
+  const v=Math.max(1,parseInt(el.textContent)+d);
+  el.textContent=v;
+}
+
+/* ── MAGNETIC CARD EFFECT ── */
+function initMagneticCards(){
+  document.querySelectorAll('.pcard').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=((e.clientX-r.left)/r.width)*100;
+      const y=((e.clientY-r.top)/r.height)*100;
+      card.style.setProperty('--mx',x+'%');
+      card.style.setProperty('--my',y+'%');
+    });
+  });
+}
+
+/* ── MODAL ── */
+function openModal(sku, e){
+  if(e) e.stopPropagation();
+  const p=P.find(x=>x.sku===sku);cp=p;mq=1;
+  const emEl = document.getElementById('mdl-em');
+  if (p.img) {
+    emEl.innerHTML = `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" onerror="this.outerHTML='${p.icon}'">`;
+  } else {
+    emEl.textContent = p.icon;
+  }
+  document.getElementById('mdl-cat').textContent=p.cat;
+  document.getElementById('mdl-sku').textContent=p.sku;
+  document.getElementById('mdl-name').textContent=p.name;
+  document.getElementById('mdl-specs').innerHTML=`
+    <div class="mdl-spec"><div class="mdl-spec-l">Unit Size</div><div class="mdl-spec-v">${p.unit}</div></div>
+    <div class="mdl-spec"><div class="mdl-spec-l">Delivery</div><div class="mdl-spec-v">${DI[p.mode]} ${p.mode}</div></div>
+    <div class="mdl-spec"><div class="mdl-spec-l">VAT</div><div class="mdl-spec-v">Included ✓</div></div>
+    <div class="mdl-spec"><div class="mdl-spec-l">SKU</div><div class="mdl-spec-v">${p.sku}</div></div>`;
+  document.getElementById('mdl-price').textContent='GHS '+p.price.toLocaleString();
+  document.getElementById('mdl-blk').innerHTML=p.bulkPrice?`<div class="mdl-blk-t">Bulk Discount</div><div class="mdl-blk-d">Order ${p.bulk}+ at GHS ${p.bulkPrice.toLocaleString()} each</div>`:`<div class="mdl-blk-t">Bulk Discount</div><div class="mdl-blk-d">Order ${p.bulk}+ for better pricing</div>`;
+  document.getElementById('mq-n').textContent=1;
+  updMdl();
+  document.getElementById('ovl').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function updMdl(){
+  const unitPrice = (cp.bulkPrice && mq >= cp.bulk) ? cp.bulkPrice : cp.price;
+  const tot = unitPrice * mq;
+  document.getElementById('mdl-tot').textContent='GHS '+tot.toLocaleString();
+  if(cp.bulkPrice && mq >= cp.bulk)
+    document.getElementById('mdl-price').textContent='GHS '+unitPrice.toLocaleString()+' (bulk rate)';
+  else
+    document.getElementById('mdl-price').textContent='GHS '+cp.price.toLocaleString();
+}
+function mqd(d){mq=Math.max(1,mq+d);document.getElementById('mq-n').textContent=mq;updMdl();}
+function closeModal(){document.getElementById('ovl').classList.remove('open');document.body.style.overflow='';}
+function handleOvl(e){if(e.target===document.getElementById('ovl'))closeModal();}
+
+/* ── CART ── */
+function openCart(){renderCart();document.getElementById('cdwr').classList.add('open');document.getElementById('cscrim').classList.add('open');document.body.style.overflow='hidden';}
+function closeCart(){document.getElementById('cdwr').classList.remove('open');document.getElementById('cscrim').classList.remove('open');document.body.style.overflow='';}
+function renderCart(){
+  const items=Object.values(cart);
+  const body=document.getElementById('cdwr-body'),foot=document.getElementById('cdwr-foot');
+  if(!items.length){
+    body.innerHTML=`<div class="cart-empty"><div class="cart-empty-i">🛒</div><div class="cart-empty-t">Your list is empty</div><div class="cart-empty-d">Browse the catalogue and add items to build your order</div></div>`;
+    foot.style.display='none';return;
+  }
+  body.innerHTML=items.map(i=>{const key=i.selectedColour?`${i.sku}__${i.selectedColour}`:i.sku;const colNote=i.selectedColour?`<span style="color:var(--sage);font-weight:700"> · ${i.selectedColour}</span>`:'';const thumb=i.img?`<img src="${i.img}" alt="${i.name}" onerror="this.style.display='none'">`:i.icon;return`<div class="citem"><div class="citem-ic">${thumb}</div><div class="citem-info"><div class="citem-n">${i.name}${colNote}</div><div class="citem-d">${i.unit} × ${i.qty}</div></div><div class="citem-p">GHS ${(i.price*i.qty).toLocaleString()}</div><button class="citem-rm" onclick="rmCart('${key}')">×</button></div>`}).join('');
+  const t=items.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('ctot-v').textContent='GHS '+t.toLocaleString();
+  foot.style.display='block';
+}
+function rmCart(key){delete cart[key];saveCart();updBdg();renderCart();}
+function selectColour(btn, sku, e){
+  if(e) e.stopPropagation();
+  btn.closest('.pcard-colours').querySelectorAll('.clr-pill').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  selectedColours[sku] = btn.dataset.colour;
+}
+const selectedColours = {};
+
+function addToCart(sku, e, q=null, showDrawer=false){
+  if(e) e.stopPropagation();
+  const qty = q || parseInt(document.getElementById('cq-'+sku)?.textContent || '1');
+  const p = P.find(x=>x.sku===sku);
+  const colour = selectedColours[sku] || (p?.colours?.[0]) || null;
+  const key = colour ? `${sku}__${colour}` : sku;
+  if(cart[key]){
+    cart[key].qty += qty;
+  } else {
+    cart[key] = {...p, qty: qty, selectedColour: colour};
+  }
+  saveCart();
+  updBdg();
+  if(showDrawer) openCart();
+  else showToast(`${p.name} added. You can keep shopping.`, 'success');
+}
+function updBdg(){
+  const t=Object.values(cart).reduce((s,i)=>s+i.qty,0);
+  const b=document.getElementById('cbdg');
+  const bb=document.getElementById('bnav-bdg');
+  b.textContent=t; b.style.display=t>0?'flex':'none';
+  bb.textContent=t; bb.style.display=t>0?'flex':'none';
+}
+
+function openCheckout(){
+  restoreCustomerDetails();
+  document.getElementById('chkOvl').classList.add('open');
+}
+
+async function submitCheckout(e){
+  e.preventDefault();
+  const btn = document.getElementById('chkBtn');
+  const name    = document.getElementById('chkName').value.trim();
+  const phone   = document.getElementById('chkPhone').value.trim();
+  const address = document.getElementById('chkAddress').value.trim();
+  const notes   = document.getElementById('chkNotes').value.trim();
+
+  if(!Object.keys(cart).length){
+    showToast('Add at least one item before requesting a quote.', 'error');
+    return;
+  }
+
+  if(!name || !phone || !address){
+    showToast('Please fill in your name, phone, and address.', 'error');
+    return;
+  }
+
+  let bestMod = 'Bike';
+  if(Object.values(cart).some(i=>i.mode==='Van'))    bestMod = 'Van';
+  if(Object.values(cart).some(i=>i.mode==='Pickup')) bestMod = 'Pickup';
+
+  saveCustomerDetails();
+  const waMsg = cleanQuoteMessage(Object.values(cart), name, phone, address, notes, bestMod);
+  window.open(wl(waMsg), '_blank');
+
+  showToast('Opening WhatsApp to send your quote request.', 'success');
+  cart = {};
+  saveCart();
+  updBdg();
+  renderCart();
+  document.getElementById('checkoutForm').reset();
+  document.getElementById('chkOvl').classList.remove('open');
+  closeCart();
+}
+
+async function copyOrderSummary(){
+  const name=document.getElementById('chkName').value.trim();
+  const phone=document.getElementById('chkPhone').value.trim();
+  const address=document.getElementById('chkAddress').value.trim();
+  if(!Object.keys(cart).length){
+    showToast('Add at least one item before copying.', 'error');
+    return;
+  }
+  if(!name || !phone || !address){
+    showToast('Fill in your name, phone, and address first.', 'error');
+    return;
+  }
+  saveCustomerDetails();
+  const msg=getQuoteMessageFromForm();
+  try{
+    await navigator.clipboard.writeText(msg);
+    showToast('Order summary copied. You can paste it into WhatsApp.', 'success');
+  }catch(e){
+    const box=document.createElement('textarea');
+    box.value=msg;
+    document.body.appendChild(box);
+    box.select();
+    document.execCommand('copy');
+    box.remove();
+    showToast('Order summary copied. You can paste it into WhatsApp.', 'success');
+  }
+}
+
+/* ── TOAST ── */
+function showToast(msg, type='success'){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+type+' show';setTimeout(()=>t.classList.remove('show'),3000);}
+
+/* ── SKELETON LOADER ── */
+function showSkeletons(){const g=document.getElementById('pgrid');g.innerHTML=Array(6).fill(0).map(()=>`<div class="skel-card"><div class="skel-img skeleton"></div><div class="skel-body"><div class="skel-line wide skeleton"></div><div class="skel-line narrow skeleton"></div><div class="skel-line price skeleton"></div></div></div>`).join('');}
+
+/* ── FOOTER CATS ── */
+function buildFCats(){document.getElementById('fcats').innerHTML=[...new Set(P.map(p=>p.cat))].map(c=>`<li><a href="#">${c}</a></li>`).join('');}
+
+/* ── NAV SCROLL ── */
+function initNav(){
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);},{ passive:true });
+}
+
+/* ── CURSOR ── */
+function initCursor(){
+  if(window.matchMedia('(hover:none)').matches) return;
+  const dot=document.getElementById('dot'),ring=document.getElementById('ring');
+  let rx=0,ry=0,cx=-200,cy=-200,started=false;
+  document.addEventListener('mousemove',e=>{
+    cx=e.clientX;cy=e.clientY;
+    dot.style.left=cx+'px';dot.style.top=cy+'px';
+    if(!started){started=true;rx=cx;ry=cy;document.body.classList.add('cur');}
+  });
+  document.addEventListener('mouseleave',()=>document.body.classList.remove('cur'));
+  document.addEventListener('mouseenter',()=>{if(started)document.body.classList.add('cur');});
+  document.addEventListener('mousedown',()=>document.body.classList.add('clicking'));
+  document.addEventListener('mouseup',()=>document.body.classList.remove('clicking'));
+  (function tick(){rx+=(cx-rx)*.12;ry+=(cy-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick);})();
+  function attachHover(){
+    document.querySelectorAll('a,button,.pcard,.ftab,.clr-pill,.ncrt,.order-btn').forEach(el=>{
+      if(el._cursorBound) return;
+      el._cursorBound=true;
+      el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+      el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+    });
+  }
+  attachHover();
+  window._attachCursorHover=attachHover;
+}
+
+/* ── SCROLL REVEAL ── */
+function initReveal(){
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+}
+</script>
+
+<!-- ══ AI WIDGET STYLES ══ -->
+<style>
+.ai-fab{position:fixed;bottom:28px;right:28px;z-index:800;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#1A6B45 0%,#0C4229 100%);border:none;box-shadow:0 8px 32px rgba(26,107,69,.45),0 2px 8px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;cursor:grab!important;touch-action:none;user-select:none;}
+.ai-fab.dragging{cursor:grabbing!important;transition:none;transform:scale(1.04);}
+.ai-fab:hover{transform:scale(1.1) translateY(-2px);box-shadow:0 14px 44px rgba(26,107,69,.55),0 4px 12px rgba(0,0,0,.25);}
+.ai-fab.open{transform:scale(1.05);}
+.ai-fab-icon{display:flex;align-items:center;justify-content:center;transition:transform .3s;}
+.ai-fab.open .ai-fab-icon{transform:rotate(45deg);}
+.ai-fab svg{width:26px;height:26px;fill:white;flex-shrink:0;}
+.ai-pulse{position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:#25D366;border:2.5px solid white;animation:aipulse 2.5s ease-in-out infinite;}
+@keyframes aipulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}60%{box-shadow:0 0 0 8px rgba(37,211,102,0);}}
+
+.ai-panel{position:fixed;bottom:100px;right:28px;z-index:800;width:380px;max-height:600px;background:#0D1A12;border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.3);display:flex;flex-direction:column;overflow:hidden;transform:scale(.9) translateY(20px);transform-origin:bottom right;opacity:0;visibility:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .3s,visibility .3s;}
+.ai-panel.open{transform:scale(1) translateY(0);opacity:1;visibility:visible;}
+
+.ai-head{padding:18px 20px 16px;background:linear-gradient(135deg,#1A6B45 0%,#0C4229 100%);display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.ai-head-avatar{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1.5px solid rgba(255,255,255,.25);}
+.ai-head-avatar svg{width:22px;height:22px;fill:white;}
+.ai-head-info{flex:1;}
+.ai-head-name{font-size:15px;font-weight:600;color:white;font-family:'Fraunces',serif;letter-spacing:-.01em;}
+.ai-head-status{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;display:flex;align-items:center;gap:5px;}
+.ai-head-status::before{content:'';width:6px;height:6px;border-radius:50%;background:#25D366;flex-shrink:0;}
+.ai-head-close{background:rgba(255,255,255,.12);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:16px;cursor:pointer!important;transition:background .2s;flex-shrink:0;}
+.ai-head-close:hover{background:rgba(255,255,255,.22);}
+
+.ai-msgs{flex:1;overflow-y:auto;padding:16px 16px 8px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent;}
+.ai-msgs::-webkit-scrollbar{width:4px;}
+.ai-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:2px;}
+
+.ai-msg{display:flex;gap:8px;max-width:90%;}
+.ai-msg.user{align-self:flex-end;flex-direction:row-reverse;}
+.ai-msg-bubble{padding:10px 14px;border-radius:16px;font-size:13.5px;line-height:1.55;font-family:'DM Sans',sans-serif;}
+.ai-msg.bot .ai-msg-bubble{background:rgba(255,255,255,.08);color:rgba(255,255,255,.88);border-radius:4px 16px 16px 16px;}
+.ai-msg.user .ai-msg-bubble{background:#1A6B45;color:white;border-radius:16px 4px 16px 16px;}
+.ai-msg-av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#1A6B45,#0C4229);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;align-self:flex-end;}
+.ai-msg-av svg{width:14px;height:14px;fill:white;}
+
+.ai-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px;}
+.ai-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 13px;font-size:12px;color:rgba(255,255,255,.7);cursor:pointer!important;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+.ai-chip:hover{background:rgba(26,107,69,.4);border-color:rgba(26,107,69,.6);color:white;}
+
+.ai-typing{display:flex;gap:4px;align-items:center;padding:10px 14px;background:rgba(255,255,255,.08);border-radius:4px 16px 16px 16px;align-self:flex-start;}
+.ai-typing span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);animation:aitype 1.2s ease-in-out infinite;}
+.ai-typing span:nth-child(2){animation-delay:.2s;}
+.ai-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes aitype{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-6px);opacity:1;}}
+
+.ai-input-row{padding:12px 16px 16px;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:8px;align-items:flex-end;flex-shrink:0;}
+.ai-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:10px 14px;font-size:13px;color:white;font-family:'DM Sans',sans-serif;outline:none;resize:none;max-height:100px;min-height:40px;line-height:1.4;transition:border-color .2s;}
+.ai-input::placeholder{color:rgba(255,255,255,.3);}
+.ai-input:focus{border-color:rgba(26,107,69,.6);}
+.ai-send{width:40px;height:40px;border-radius:12px;background:#1A6B45;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer!important;transition:background .2s,transform .15s;flex-shrink:0;}
+.ai-send:hover{background:#115C38;transform:scale(1.05);}
+.ai-send:disabled{background:rgba(255,255,255,.1);transform:none;}
+.ai-send svg{width:17px;height:17px;fill:white;}
+.ai-footer-note{text-align:center;font-size:10px;color:rgba(255,255,255,.2);padding:0 16px 10px;font-family:'DM Sans',sans-serif;}
+
+@media(max-width:480px){
+  .ai-panel{width:calc(100vw - 24px);right:12px;bottom:88px;}
+  .ai-fab{bottom:140px;right:16px;}
+}
+</style>
+
+<!-- ══ AI WIDGET HTML ══ -->
+<button class="ai-fab" id="aiFab" onclick="toggleAI()" aria-label="Chat with AI assistant">
+  <div class="ai-pulse"></div>
+  <div class="ai-fab-icon">
+    <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a7 7 0 01-7 7H10a7 7 0 01-7-7v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73A2 2 0 0110 4a2 2 0 012-2zM9 9a5 5 0 00-5 5v2a5 5 0 005 5h6a5 5 0 005-5v-2a5 5 0 00-5-5H9zm1 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm4 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/></svg>
+  </div>
+</button>
+
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-head">
+    <div class="ai-head-avatar">
+      <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a7 7 0 01-7 7H10a7 7 0 01-7-7v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73A2 2 0 0110 4a2 2 0 012-2zM9 9a5 5 0 00-5 5v2a5 5 0 005 5h6a5 5 0 005-5v-2a5 5 0 00-5-5H9zm1 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm4 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/></svg>
+    </div>
+    <div class="ai-head-info">
+      <div class="ai-head-name">MCC Shop Assistant</div>
+      <div class="ai-head-status">Online - catalogue guide</div>
+    </div>
+    <button class="ai-head-close" onclick="toggleAI()">✕</button>
+  </div>
+  <div class="ai-msgs" id="aiMsgs"></div>
+  <div class="ai-chips" id="aiChips">
+    <button class="ai-chip" onclick="sendChip(this)">What paints do you have?</button>
+    <button class="ai-chip" onclick="sendChip(this)">Bulk order pricing</button>
+    <button class="ai-chip" onclick="sendChip(this)">Delivery to my area</button>
+    <button class="ai-chip" onclick="sendChip(this)">Office furniture</button>
+    <button class="ai-chip" onclick="sendChip(this)">Safety equipment</button>
+  </div>
+  <div class="ai-input-row">
+    <textarea class="ai-input" id="aiInput" placeholder="Ask about products, delivery, bulk orders..." rows="1" onkeydown="aiKey(event)" oninput="aiResize(this)"></textarea>
+    <button class="ai-send" id="aiSendBtn" onclick="aiSend()">
+      <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    </button>
+  </div>
+  <div class="ai-footer-note">Catalogue guide - verify availability with our team on WhatsApp</div>
+</div>
+
+<script>
+/* ══ AI WIDGET ══ */
+const AI_OPEN = false;
+let aiOpen = false;
+let aiHistory = [];
+let aiTyping = false;
+let aiSuppressToggle = false;
+
+function buildProductContext(){
+  const productContext = P.map(p => `${p.name} (${p.sku}): GHS ${p.price} / ${p.unit}, ${p.cat}, ${p.mode} delivery`).join('\n');
+  return `You are the MCC Shop AI assistant — a helpful, knowledgeable, and friendly shopping guide for The MCC Shop, Ghana's premier building materials, decor, home & office furniture, tools and equipment delivery service in Accra.
+
+ABOUT MCC SHOP:
+- Delivers to all of Accra (home, office, construction sites)
+- Delivery modes: Bike (small items), Van (medium), Pickup truck (bulk/heavy)
+- All prices are VAT inclusive, in GHS
+- Orders placed via WhatsApp: +233 50 991 9161
+- Bulk discounts available above threshold quantities
+
+CURRENT PRODUCTS:
+${productContext}
+
+ORDERING: Customers browse the site, then order via WhatsApp. No online payment — delivery fee is discussed on WhatsApp. There is no checkout flow on the site.
+
+PERSONALITY: Be warm, helpful, concise. Speak like a knowledgeable Ghanaian shop assistant. Use GHS for currency. Keep responses short (2-4 sentences max unless listing products). Always encourage WhatsApp contact for final orders. If asked about products not in the catalogue, say the team can source them.`;
+}
+const PRODUCT_CONTEXT = null; // replaced by buildProductContext() — called dynamically
+
+function toggleAI(){
+  if(aiSuppressToggle) return;
+  aiOpen = !aiOpen;
+  document.getElementById('aiFab').classList.toggle('open', aiOpen);
+  document.getElementById('aiPanel').classList.toggle('open', aiOpen);
+  if(window.positionAIPanel) setTimeout(window.positionAIPanel, 0);
+  if(aiOpen && aiHistory.length === 0){
+    setTimeout(()=>addMsg('bot','Hello! 👋 I\'m your MCC Shop assistant. I can help you find products, check prices, and learn about delivery across Accra. What are you looking for today?'), 300);
+  }
+  if(aiOpen) setTimeout(()=>document.getElementById('aiInput').focus(), 400);
+}
+
+function initDraggableAI(){
+  const fab=document.getElementById('aiFab');
+  const panel=document.getElementById('aiPanel');
+  if(!fab) return;
+
+  const saved=localStorage.getItem('mcc_ai_fab_pos');
+  if(saved){
+    try{
+      const pos=JSON.parse(saved);
+      if(Number.isFinite(pos.left) && Number.isFinite(pos.top)){
+        fab.style.left=pos.left+'px';
+        fab.style.top=pos.top+'px';
+        fab.style.right='auto';
+        fab.style.bottom='auto';
+      }
+    }catch(e){}
+  }
+
+  let dragging=false,startX=0,startY=0,startLeft=0,startTop=0,moved=false;
+  const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+  const positionPanel=()=>{
+    if(!panel || !aiOpen) return;
+    const r=fab.getBoundingClientRect();
+    const panelWidth=Math.min(380,window.innerWidth-24);
+    const left=clamp(r.left+r.width-panelWidth,12,window.innerWidth-panelWidth-12);
+    const top=clamp(r.top-610,12,window.innerHeight-220);
+    panel.style.left=left+'px';
+    panel.style.right='auto';
+    panel.style.bottom='auto';
+    panel.style.top=top+'px';
+  };
+  window.positionAIPanel=positionPanel;
+
+  fab.addEventListener('pointerdown',e=>{
+    if(e.button !== undefined && e.button !== 0) return;
+    const r=fab.getBoundingClientRect();
+    dragging=true;moved=false;
+    startX=e.clientX;startY=e.clientY;startLeft=r.left;startTop=r.top;
+    fab.classList.add('dragging');
+    fab.setPointerCapture?.(e.pointerId);
+  });
+
+  fab.addEventListener('pointermove',e=>{
+    if(!dragging) return;
+    const dx=e.clientX-startX,dy=e.clientY-startY;
+    if(Math.abs(dx)+Math.abs(dy)>6) moved=true;
+    const left=clamp(startLeft+dx,8,window.innerWidth-fab.offsetWidth-8);
+    const top=clamp(startTop+dy,8,window.innerHeight-fab.offsetHeight-8);
+    fab.style.left=left+'px';
+    fab.style.top=top+'px';
+    fab.style.right='auto';
+    fab.style.bottom='auto';
+    positionPanel();
+  });
+
+  fab.addEventListener('pointerup',e=>{
+    if(!dragging) return;
+    dragging=false;
+    fab.classList.remove('dragging');
+    fab.releasePointerCapture?.(e.pointerId);
+    const r=fab.getBoundingClientRect();
+    localStorage.setItem('mcc_ai_fab_pos',JSON.stringify({left:r.left,top:r.top}));
+    if(moved){
+      aiSuppressToggle=true;
+      setTimeout(()=>{aiSuppressToggle=false;},80);
+    }
+  });
+
+  window.addEventListener('resize',()=>{
+    const r=fab.getBoundingClientRect();
+    const left=clamp(r.left,8,window.innerWidth-fab.offsetWidth-8);
+    const top=clamp(r.top,8,window.innerHeight-fab.offsetHeight-8);
+    fab.style.left=left+'px';
+    fab.style.top=top+'px';
+    fab.style.right='auto';
+    fab.style.bottom='auto';
+    localStorage.setItem('mcc_ai_fab_pos',JSON.stringify({left,top}));
+    positionPanel();
+  });
+}
+
+function addMsg(role, text){
+  const msgs = document.getElementById('aiMsgs');
+  const div = document.createElement('div');
+  div.className = `ai-msg ${role}`;
+  const av = role === 'bot'
+    ? `<div class="ai-msg-av"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a7 7 0 01-7 7H10a7 7 0 01-7-7v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73A2 2 0 0110 4a2 2 0 012-2zM9 9a5 5 0 00-5 5v2a5 5 0 005 5h6a5 5 0 005-5v-2a5 5 0 00-5-5H9zm1 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm4 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/></svg></div>`
+    : `<div class="ai-msg-av" style="background:rgba(255,255,255,.12);">👤</div>`;
+  div.innerHTML = `${av}<div class="ai-msg-bubble">${text.replace(/\n/g,'<br>')}</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  aiHistory.push({role: role === 'bot' ? 'assistant' : 'user', content: text});
+}
+
+function showTyping(){
+  const msgs = document.getElementById('aiMsgs');
+  const el = document.createElement('div');
+  el.className = 'ai-msg bot';
+  el.id = 'aiTypingEl';
+  el.innerHTML = `<div class="ai-msg-av"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a7 7 0 01-7 7H10a7 7 0 01-7-7v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73A2 2 0 0110 4a2 2 0 012-2z"/></svg></div><div class="ai-typing"><span></span><span></span><span></span></div>`;
+  msgs.appendChild(el);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping(){
+  const el = document.getElementById('aiTypingEl');
+  if(el) el.remove();
+}
+
+async function callClaude(userMsg){
+  const q = userMsg.toLowerCase();
+  if(/price|cost|how much|ghs|cedis/.test(q))
+    return 'Prices are shown on each product card (VAT inclusive). Add to cart then tap WhatsApp for a quote with delivery. Call us: +233 50 991 9161.';
+  if(/gechi|edra|blazer|lawrence|k2419|luxury sofa|luxury furniture|showroom|ck820|ck815|ck812|ck810|k2516/.test(q))
+    return 'Our MCC Showroom collection ships directly from China — 20–30 days delivery. Items include CK820W Curved Sofa (GHS 37,600), CK815W L-Shaped Sofa (GHS 38,800), GECHI Edra, Blazer, Lawrence and more, from GHS 4,100. Browse the Imported tab or WhatsApp +233 50 991 9161.';
+  if(/sofa|couch|leather|fabric|living/.test(q))
+    return 'We carry fabric and leather sofas — local sets from GHS 2,500, and MCC Showroom imports from GHS 4,100 to GHS 49,400 (CK-series, K2516, GECHI Edra, Blazer, Lawrence). All imported sofas ship from China in 20–30 days. Browse the Imported tab or WhatsApp +233 50 991 9161.';
+  if(/mattress/.test(q))
+    return 'We stock 5 GECHI mattress models: Balance Comfort (GHS 2,400), 3D Firm Orthopedic (GHS 3,100), Gravity/Life No.1/Aviation Comfort (GHS 4,100 each). All 1800×2000mm, shipped from China. Browse the Imported tab or WhatsApp +233 50 991 9161.';
+  if(/bed|bedroom|king|queen/.test(q))
+    return 'We carry local Queen & King beds (GHS 2,000–4,000) and luxury imported beds: P652 Leather (GHS 17,600), 1825B (GHS 12,900), Fendi Sky S (GHS 32,900). Plus 5 GECHI mattress models from GHS 2,400. WhatsApp +233 50 991 9161.';
+  if(/bedside|nightstand|night table/.test(q))
+    return 'We stock 5 bedside table models: ST005 & ST085 Smart (GHS 1,400), ST329 Leather (GHS 2,900), ST037A & ST230 Safe (GHS 3,900). All imported from China, 20–30 days. WhatsApp +233 50 991 9161.';
+  if(/dressing table|dresser|vanity/.test(q))
+    return 'We carry dressing tables with mirror & stool: T56 (GHS 5,900), T59-2 (GHS 5,900), T97 Flip-top (GHS 6,500), T103 LED (GHS 6,500). All imported, 20–30 days. WhatsApp +233 50 991 9161.';
+  if(/sideboard|cabinet|console/.test(q))
+    return 'We stock the C15-1 Italian Marble Sideboard (GHS 11,800) and C35 Walnut & Stone Sideboard (GHS 15,300). Both imported from China, 20–30 days. WhatsApp +233 50 991 9161.';
+  if(/desk|study|home office|writing/.test(q))
+    return 'We carry the S1274 Smoked Oak Executive Desk (GHS 5,900) and S1258 Walnut Designer Desk (GHS 10,000), plus our full office range from GHS 3,100. WhatsApp +233 50 991 9161.';
+  if(/dining|table/.test(q))
+    return 'Dining sets: 4-seater (GHS 4,500), 6-seater (GHS 6,000), Luxury marble/ceramic (GHS 8,000). Plus MCC Showroom imports: MS-25 Stone Table & VS18 Rose Gold Table (GHS 23,500 each), shell & cone dining chairs from GHS 2,200. WhatsApp +233 50 991 9161.';
+  if(/paint|emulsion|acrylic|oil|colour|color/.test(q))
+    return 'We stock Emulsion (GHS 300/20L), Acrylic Premium (GHS 650/20L), and Oil Paint (GHS 200/4L) in multiple colours. Select colour on the card then order via WhatsApp +233 50 991 9161.';
+  if(/board|plaster|ceiling|panel|pvc/.test(q))
+    return 'Plasterboard 9mm (GHS 150/sheet), 12mm (GHS 200/sheet), PVC Ceiling Panels from GHS 60. Bulk discounts available — WhatsApp +233 50 991 9161.';
+  if(/deliver|shipping|accra|location|china|import/.test(q))
+    return 'Local Accra delivery: home, office, or construction site — fee confirmed on WhatsApp. GECHI luxury imports ship direct from China, 20–30 days to your doorstep. WhatsApp +233 50 991 9161.';
+  if(/bulk|discount|wholesale/.test(q))
+    return 'Bulk discounts are shown on each product card. WhatsApp +233 50 991 9161 to confirm bulk rate and delivery.';
+  if(/order|buy|purchase/.test(q))
+    return 'Browse the catalogue, add to cart, then tap the WhatsApp button — your order goes straight to our team at +233 50 991 9161.';
+  if(/pay|mobile money|momo|cash/.test(q))
+    return 'We accept Mobile Money and cash on delivery. Details confirmed on WhatsApp +233 50 991 9161.';
+  if(/hello|hi|hey/.test(q))
+    return 'Hello! Welcome to The MCC Shop. Browse our catalogue or ask me anything. WhatsApp: +233 50 991 9161.';
+  if(/office|desk|executive|workstation|swivel/.test(q))
+    return 'GECHi Italian Design office furniture: Executive Desks from GHS 3,100, Office Chairs from GHS 700, Workstations (2-8 people) from GHS 2,500. Browse the Office tab or WhatsApp +233 50 991 9161.';
+  if(/kitchen|cabinet/.test(q))
+    return 'We build custom kitchens with imported materials: Budget from GHS 45,000, Standard from GHS 75,000, Premium from GHS 150,000. Price depends on size. WhatsApp +233 50 991 9161 for a quote.';
+  if(/wardrobe|closet|tv unit|wall unit/.test(q))
+    return 'Sliding wardrobes from GHS 800/m2, walk-in closets (custom quote), TV wall units from GHS 2,500. WhatsApp +233 50 991 9161.';
+  if(/door|wooden door|security door|glass door/.test(q))
+    return 'We stock Wooden, Security, WPC, MDF, Laminate and Glass doors from GHS 700 per door. WhatsApp +233 50 991 9161.';
+  if(/window|glazing|aluminium|casement|tempered/.test(q))
+    return 'We supply Aluminium Sliding, Casement, Fixed, Tempered and Tinted Glass windows from GHS 600/m2. WhatsApp +233 50 991 9161.';
+  if(/floor|tile|porcelain|granite|vinyl|laminate floor/.test(q))
+    return 'Flooring: Porcelain GHS 50/m2, Granite GHS 60/m2, SPC Vinyl GHS 120/m2, Laminate GHS 100/m2. Bulk from 30m2+. WhatsApp +233 50 991 9161.';
+  return 'For the fastest help, WhatsApp our team on +233 50 991 9161 — available Monday to Saturday for products, delivery, and pricing.';
+}
+
+async function aiSend(text){
+  const input = document.getElementById('aiInput');
+  const msg = (text || input.value).trim();
+  if(!msg || aiTyping) return;
+  input.value = '';
+  aiResize(input);
+  document.getElementById('aiChips').style.display = 'none';
+  addMsg('user', msg);
+  aiTyping = true;
+  document.getElementById('aiSendBtn').disabled = true;
+  showTyping();
+  try{
+    const reply = await callClaude(msg);
+    removeTyping();
+    addMsg('bot', reply);
+  } catch(e){
+    removeTyping();
+    addMsg('bot','Sorry, I\'m having trouble connecting. Please WhatsApp us directly at +233 50 991 9161 — our team is ready to help! 🛒');
+  }
+  aiTyping = false;
+  document.getElementById('aiSendBtn').disabled = false;
+}
+
+function sendChip(btn){
+  aiSend(btn.textContent);
+}
+
+function aiKey(e){
+  if(e.key==='Enter' && !e.shiftKey){e.preventDefault(); aiSend();}
+}
+
+function aiResize(el){
+  el.style.height='auto';
+  el.style.height=Math.min(el.scrollHeight,100)+'px';
+}
+
+document.addEventListener('DOMContentLoaded', initDraggableAI);
+</script>
+<div id="toast" class="toast"></div>
+</body>
+</html>

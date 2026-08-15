@@ -1,0 +1,74 @@
+const express = require("express");
+const prisma = require("../lib/prisma");
+const { authenticate, authorize } = require("../middleware/auth.middleware");
+
+const router = express.Router();
+
+// GET /api/products  – list all published products (with optional filters)
+router.get("/", async (req, res, next) => {
+  try {
+    const { category, search, dispatch, limit = 50, offset = 0 } = req.query;
+    const safeLimit = Math.min(Math.max(1, Number(limit) || 50), 200);
+    const safeOffset = Math.max(0, Number(offset) || 0);
+
+    const where = { isPublished: true };
+    if (category) where.category = category;
+    if (dispatch) where.dispatchMode = dispatch.toUpperCase();
+    if (search) {
+      where.OR = [
+        { name: { contains: search } },
+        { skuCode: { contains: search } },
+        { category: { contains: search } },
+      ];
+    }
+
+    const [rawProducts, total] = await Promise.all([
+      prisma.product.findMany({
+        where,
+        take: safeLimit,
+        skip: safeOffset,
+        orderBy: [{ mvpPriority: "desc" }, { name: "asc" }],
+      }),
+      prisma.product.count({ where }),
+    ]);
+
+    // Never expose internal cost price to public
+    const products = rawProducts.map(({ costPrice: _, ...p }) => p);
+
+    res.json({ products, total, limit: safeLimit, offset: safeOffset });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// GET /api/products/categories  – list all unique categories
+router.get("/categories", async (req, res, next) => {
+  try {
+    const categories = await prisma.product.findMany({
+      where: { isPublished: true },
+      select: { category: true },
+      distinct: ["category"],
+    });
+    res.json({ categories: categories.map((c) => c.category) });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// GET /api/products/:id  – single product
+router.get("/:id", async (req, res, next) => {
+  try {
+    const raw = await prisma.product.findUnique({
+      where: { id: req.params.id },
+    });
+    if (!raw || !raw.isPublished) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    const { costPrice: _, ...product } = raw;
+    res.json({ product });
+  } catch (err) {
+    next(err);
+  }
+});
+
+module.exports = router;
