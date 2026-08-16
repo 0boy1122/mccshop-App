@@ -43,7 +43,10 @@ async function issueOtp(phone, purpose) {
       console.warn(`[otp] SMS not sent (${e.message}). Dev code for ${phone}: ${code}`);
       return { devCode: code };
     }
-    throw { status: 502, message: "Couldn't send the verification code. Please try again." };
+    // 503, not 502 — Cloudflare (sitting in front of the Forge deployment)
+    // intercepts 502s specifically and replaces them with its own generic
+    // error page instead of passing through our actual JSON error body.
+    throw { status: 503, message: "Verification codes aren't available yet — contact support to create your account." };
   }
   return {};
 }
